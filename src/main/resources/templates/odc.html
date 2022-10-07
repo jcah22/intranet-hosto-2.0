@@ -15,19 +15,51 @@
 
 <body>
 
-	<div class="container">
-		<ul th:each="odc : ${odcs}">
-			<li th:text="${odc.id_odc}"></li>
-			<li th:text="${odc.cfdi }"></li>
-			<li th:text="${odc.descripcion}"></li>
-			<li th:text="${odc.factura}"></li>
-			<li th:text="${odc.descripcion}"></li>
-			<li th:text="${odc.total}"></li>
-			<li th:text="${odc.req.id_req}"></li>
+	<div class="container-fluid mt-5">
+		<table class="table table-hover text-center ">
+			<thead>
+				<tr>
+					<th scope="col">ID ODC</th>
+					<th scope="col">DESCRIPCIÓN</th>
+					<th scope="col">FACTURA</th>
+					<th scope="col">FECHA</th>
+					<th scope="col">FLETE</th>
+					<th scope="col">CFDI</th>
+					<th scope="col">AUTORIZA</th>
+					<th scope="col">REQUISICION</th>
+					<th scope="col">ESTATUS</th>
+					<th scope="col">USUARIO</th>
+					<th scope="col">TOTAL</th>
+				</tr>
+			</thead>
+			<tbody th:each="odc : ${odcs}">
+				<tr>
 
-		</ul>
+					<td th:text="${odc.id_odc}"></td>
+					<td th:text="${odc.descripcion}"></td>
+					<td th:text="${odc.factura}"></td>
+					<td th:text="${odc.fecha}"></td>
+					<td th:text="${odc.flete}"></td>
+					<td th:text="${odc.cfdi.nombre}"></td>
+					<td th:text="${odc.directivo.nombre}"></td>
+					<td th:text="${odc.req.codigo}"></td>
+					<td th:text="${odc.status.nombre}"></td>
+					<td th:text="${odc.usuario.username}"></td>
+					<td th:text="${odc.total}"></td>
+
+				</tr>
+
+
+			</tbody>
+		</table>
 
 	</div>
+
+
+
+
+
+
 
 
 

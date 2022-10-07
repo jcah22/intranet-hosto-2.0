@@ -26,12 +26,28 @@ public class Odc {
 	
 	private Double total;
 	
-	private String cfdi;
 	
 	
 	@ManyToOne
 	@JoinColumn(name = "req_id")
 	private Req req;
+	
+	@ManyToOne
+	@JoinColumn(name = "status_id")
+	private Status status;
+	
+	@ManyToOne
+	@JoinColumn(name = "directivo_id")
+	private Directivo directivo;
+	
+	@ManyToOne
+	@JoinColumn(name = "cfdi_id")
+	private Cfdi cfdi;
+	
+	
+	@ManyToOne
+	@JoinColumn(name = "usuario_id")
+	private Usuario usuario;
 
 
 	public Odc() {
@@ -39,8 +55,8 @@ public class Odc {
 	}
 
 
-	public Odc(Integer id_odc, String descripcion, String factura, Date fecha, Boolean flete, Double total, String cfdi,
-			Req req) {
+	public Odc(Integer id_odc, String descripcion, String factura, Date fecha, Boolean flete, Double total, Req req,
+			Status status, Directivo directivo, Cfdi cfdi, Usuario usuario) {
 		super();
 		this.id_odc = id_odc;
 		this.descripcion = descripcion;
@@ -48,8 +64,11 @@ public class Odc {
 		this.fecha = fecha;
 		this.flete = flete;
 		this.total = total;
-		this.cfdi = cfdi;
 		this.req = req;
+		this.status = status;
+		this.directivo = directivo;
+		this.cfdi = cfdi;
+		this.usuario = usuario;
 	}
 
 
@@ -113,16 +132,6 @@ public class Odc {
 	}
 
 
-	public String getCfdi() {
-		return cfdi;
-	}
-
-
-	public void setCfdi(String cfdi) {
-		this.cfdi = cfdi;
-	}
-
-
 	public Req getReq() {
 		return req;
 	}
@@ -131,6 +140,61 @@ public class Odc {
 	public void setReq(Req req) {
 		this.req = req;
 	}
+
+
+	public Status getStatus() {
+		return status;
+	}
+
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
+
+	public Directivo getDirectivo() {
+		return directivo;
+	}
+
+
+	public void setDirectivo(Directivo directivo) {
+		this.directivo = directivo;
+	}
+
+
+	public Cfdi getCfdi() {
+		return cfdi;
+	}
+
+
+	public void setCfdi(Cfdi cfdi) {
+		this.cfdi = cfdi;
+	}
+
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
 	
 	
 	

@@ -10,8 +10,8 @@ import com.hosto.repository.OdcRepository;
 import com.hosto.service.IOdcService;
 
 @Service
-public class OdcServiceImpl implements IOdcService{
-	
+public class OdcServiceImpl implements IOdcService {
+
 	@Autowired
 	private OdcRepository odcrepository;
 
@@ -24,7 +24,7 @@ public class OdcServiceImpl implements IOdcService{
 	@Override
 	public void guardar(Odc odc) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class OdcServiceImpl implements IOdcService{
 	@Override
 	public void eliminar(Long id) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -44,7 +44,5 @@ public class OdcServiceImpl implements IOdcService{
 		// TODO Auto-generated method stub
 		return odcrepository.findByOdcs(palabraClave);
 	}
-
-
 
 }

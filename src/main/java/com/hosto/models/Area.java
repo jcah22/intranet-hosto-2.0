@@ -20,14 +20,18 @@ public class Area {
 	@OneToMany(mappedBy = "area")
 	private List<Usuario> usuario;
 
+	@OneToMany(mappedBy = "area")
+	private List<Odc> odc;
+
 	public Area() {
 
 	}
 
-	public Area(Integer id_area, String nombre, List<Usuario> usuario) {
+	public Area(Integer id_area, String nombre, List<Usuario> usuario, List<Odc> odc) {
 		this.id_area = id_area;
 		this.nombre = nombre;
 		this.usuario = usuario;
+		this.odc = odc;
 	}
 
 	public Integer getId_area() {
@@ -52,6 +56,14 @@ public class Area {
 
 	public void setUsuario(List<Usuario> usuario) {
 		this.usuario = usuario;
+	}
+
+	public List<Odc> getOdc() {
+		return odc;
+	}
+
+	public void setOdc(List<Odc> odc) {
+		this.odc = odc;
 	}
 
 }

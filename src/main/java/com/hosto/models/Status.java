@@ -10,18 +10,18 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Status {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id_status;
-	
+
 	private String nombre;
-	
+
 	@OneToMany(mappedBy = "status")
 	private List<Odc> odc;
 
 	public Status() {
-	
+
 	}
 
 	public Status(Integer id_status, String nombre, List<Odc> odc) {
@@ -53,12 +53,5 @@ public class Status {
 	public void setOdc(List<Odc> odc) {
 		this.odc = odc;
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }

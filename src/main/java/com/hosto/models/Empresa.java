@@ -36,7 +36,7 @@ public class Empresa {
 
 	public Empresa(Integer id_empresa, String correo, String direccion, String imagen, String nombre, String rfc,
 			String telefono, List<Req> reqs) {
-	
+
 		this.id_empresa = id_empresa;
 		this.correo = correo;
 		this.direccion = direccion;

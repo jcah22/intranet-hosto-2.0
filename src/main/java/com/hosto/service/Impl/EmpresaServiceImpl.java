@@ -10,8 +10,8 @@ import com.hosto.repository.EmpresaRepository;
 import com.hosto.service.IEmpresaService;
 
 @Service
-public class EmpresaServiceImpl implements IEmpresaService{
-	
+public class EmpresaServiceImpl implements IEmpresaService {
+
 	@Autowired
 	private EmpresaRepository empresaRepository;
 
@@ -24,7 +24,7 @@ public class EmpresaServiceImpl implements IEmpresaService{
 	@Override
 	public void guardar(Empresa empresa) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class EmpresaServiceImpl implements IEmpresaService{
 	@Override
 	public void eliminar(Long id) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

@@ -10,42 +10,46 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
 		integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-	<title>Empresas</title>
+	<link rel="stylesheet" th:href="@{/css/estilos.css}">
+
+	<title>ODC´S</title>
 </head>
 
 <body>
+
+	<header th:insert="fragments/header :: header"></header>
 
 	<div class="container-fluid mt-5">
 		<table class="table table-hover text-center ">
 			<thead>
 				<tr>
-					<th scope="col">ID ODC</th>
+					<th scope="col">ODC</th>
 					<th scope="col">DESCRIPCIÓN</th>
 					<th scope="col">FACTURA</th>
 					<th scope="col">FECHA</th>
 					<th scope="col">FLETE</th>
-					<th scope="col">CFDI</th>
+					<th scope="col">USO CFDI</th>
 					<th scope="col">AUTORIZA</th>
-					<th scope="col">REQUISICION</th>
 					<th scope="col">ESTATUS</th>
 					<th scope="col">USUARIO</th>
 					<th scope="col">TOTAL</th>
+					<th scope="col">AREA</th>
 				</tr>
 			</thead>
 			<tbody th:each="odc : ${odcs}">
 				<tr>
 
-					<td th:text="${odc.id_odc}"></td>
+					<td th:text=" ${odc.req.codigo}+'/'+ ${odc.id_odc} "></td>
 					<td th:text="${odc.descripcion}"></td>
 					<td th:text="${odc.factura}"></td>
-					<td th:text="${odc.fecha}"></td>
+					<td th:text="${#dates.format(odc.fecha,'dd-MM-yyyy')}"></td>
 					<td th:text="${odc.flete}"></td>
-					<td th:text="${odc.cfdi.nombre}"></td>
+					<td th:text="${odc.cfdi.codigo}+'-'+${odc.cfdi.nombre}"></td>
 					<td th:text="${odc.directivo.nombre}"></td>
-					<td th:text="${odc.req.codigo}"></td>
 					<td th:text="${odc.status.nombre}"></td>
 					<td th:text="${odc.usuario.username}"></td>
-					<td th:text="${odc.total}"></td>
+					<td th:text="'$'+ ${odc.total}"></td>
+					<td th:text="${odc.usuario.area.nombre}"></td>
 
 				</tr>
 
@@ -61,7 +65,7 @@
 
 
 
-
+	<footer th:insert="fragments/footer :: footer"></footer>
 
 
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

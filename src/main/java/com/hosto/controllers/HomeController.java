@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hosto.models.Empresa;
 import com.hosto.models.Req;
@@ -88,6 +87,15 @@ public class HomeController {
 		
 		return "redirect:/?filtro=z";
 	
+		
+	}
+	
+	
+	@GetMapping("/newodc")
+	public String newodc() {
+		
+		
+		return "newodc";
 		
 	}
 

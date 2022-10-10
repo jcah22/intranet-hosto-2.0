@@ -8,7 +8,7 @@ public interface IReqService {
 
 	public List<Req> listarTodos();
 
-	public void guardar(Req req);
+	public void guardarReq(Req req);
 
 	public Req buscarPorId(Long id);
 

@@ -22,8 +22,10 @@ public class ReqServiceImpl implements IReqService {
 	}
 
 	@Override
-	public void guardar(Req req) {
-		// TODO Auto-generated method stub
+	public void guardarReq(Req req) {
+		
+		reqrepository.save(req);
+		
 
 	}
 

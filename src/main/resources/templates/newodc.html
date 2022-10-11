@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<!-- Required meta tags -->
@@ -14,18 +14,20 @@
 </head>
 
 <body>
-	<h1 class="text-center mt-3 text-success">Nueva Orden de Compra</h1>
+	<h1 class="text-center mt-3 text-primary">Nueva Orden de Compra</h1>
+
 
 	<div class="container">
-		<form>
+		<hr>
+		<form th:action="@{/saveodc}" th:object="${odc}" autocomplete="off" method="POST">
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="descripcion">Descripción</label>
-					<input type="text" class="form-control" id="descripcion">
+					<input type="text" class="form-control" th:field="*{descripcion}">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="factura">Factura</label>
-					<input type="factura" class="form-control" id="factura">
+					<input type="factura" class="form-control" th:field="*{factura}">
 				</div>
 			</div>
 
@@ -33,7 +35,7 @@
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="fecha">Fecha</label>
-					<input type="date" class="form-control" id="fecha">
+					<input type="date" class="form-control">
 				</div>
 				<div class="form-group col-md-6">
 					<fieldset class="form-group row mt-3">
@@ -66,39 +68,69 @@
 							<span class="input-group-text">$</span>
 						</div>
 						<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
-							placeholder="Total">
+							placeholder="Total" th:field="*{total}">
 
 					</div>
 				</div>
 				<div class="form-group col-md-6">
 
-					
-					<select id="inputState" class="form-control">
-						<option selected>Area</option>
-						<option>...</option>
+
+					<select id="area" class="form-control" th:field="*{area}">
+						<option th:each="a:${areas}" th:value="${a.id_area}" th:text="${a.nombre}"></option>
 					</select>
 				</div>
 			</div>
-			
-			
+
+
 			<div class="form-row">
-			<div class="form-group col-md-6">
-				<select id="inputState" class="form-control">
-						<option selected>Uso Cfdi</option>
-						<option>...</option>
+				<div class="form-group col-md-6">
+					<select id="cfdi" class="form-control" th:field="*{cfdi}">
+						<option th:each="c:${cfdis }" th:value="${c.id_cfdi}" th:text="${c.codigo}+ ' - '+ ${c.nombre}">
+						</option>
 					</select>
-			
-			</div>
-			<div class="form-group col-md-6">
-				<select id="inputState" class="form-control">
-						<option selected>Directivo</option>
-						<option>...</option>
+
+				</div>
+				<div class="form-group col-md-6">
+					<select id="directivo" class="form-control" th:field=*{directivo}>
+						<option th:each="d:${directivos}" th:value="${d.id_directivo}" th:text="${d.nombre}"></option>
 					</select>
-			
+
+				</div>
+
+
 			</div>
-			
-			
+
+
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<select id="req" class="form-control" th:field="*{req}">
+						<option th:each="r:${reqs}" th:value="${r.id_req}" th:text="${r.codigo}+'  '+ ${r.nombre}">
+						</option>
+					</select>
+
+				</div>
+				<div class="form-group col-md-6">
+					<select id="req" class="form-control" th:field="*{status}">
+						<option th:each="s:${estatus}" th:value="${s.id_status}" th:text="${s.nombre}"></option>
+					</select>
+
+				</div>
+
+
 			</div>
+
+			<div class="form-row justify-content-center mt-3">
+				<div class="form-group col-md-8 ">
+
+
+					<input type="submit" class="btn btn-outline-success btn-lg btn-block"
+						value="Guardar Orden de Compra" />
+
+
+				</div>
+
+			</div>
+
 
 
 

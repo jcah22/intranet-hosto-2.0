@@ -1,5 +1,6 @@
 package com.hosto.models;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -9,7 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Area {
+public class Area implements Serializable{
+
+	
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -66,4 +71,10 @@ public class Area {
 		this.odc = odc;
 	}
 
+	@Override
+	public String toString() {
+		return "Area [id_area=" + id_area + ", nombre=" + nombre + ", usuario=" + usuario + ", odc=" + odc + "]";
+	}
+
+	
 }

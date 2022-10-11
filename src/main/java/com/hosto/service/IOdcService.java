@@ -8,7 +8,7 @@ public interface IOdcService {
 
 	public List<Odc> listarTodos();
 
-	public void guardar(Odc odc);
+	public Odc guardar(Odc odc);
 
 	public Odc buscarPorId(Long id);
 

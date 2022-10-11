@@ -1,8 +1,10 @@
 package com.hosto.models;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,7 +12,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Odc {
+public class Odc implements Serializable{
+
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,27 +31,27 @@ public class Odc {
 
 	private Double total;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "req_id")
 	private Req req;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "status_id")
 	private Status status;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "directivo_id")
 	private Directivo directivo;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "cfdi_id")
 	private Cfdi cfdi;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "area_id")
 	private Area area;
 
@@ -166,5 +171,14 @@ public class Odc {
 	public void setArea(Area area) {
 		this.area = area;
 	}
+
+	@Override
+	public String toString() {
+		return "Odc [id_odc=" + id_odc + ", descripcion=" + descripcion + ", factura=" + factura + ", fecha=" + fecha
+				+ ", flete=" + flete + ", total=" + total + ", req=" + req + ", status=" + status + ", directivo="
+				+ directivo + ", cfdi=" + cfdi + ", usuario=" + usuario + ", area=" + area + "]";
+	}
+	
+	
 
 }

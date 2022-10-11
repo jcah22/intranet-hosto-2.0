@@ -1,5 +1,6 @@
 package com.hosto.models;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +13,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Usuario {
+public class Usuario implements Serializable{
+
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -182,5 +186,16 @@ public class Usuario {
 	public void setOdc(List<Odc> odc) {
 		this.odc = odc;
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario [id_usuario=" + id_usuario + ", apellidoPaterno=" + apellidoPaterno + ", apellidoMaterno="
+				+ apellidoMaterno + ", nombres=" + nombres + ", correo=" + correo + ", fechaIngreso=" + fechaIngreso
+				+ ", fechaNacimiento=" + fechaNacimiento + ", foto=" + foto + ", password=" + password + ", status="
+				+ status + ", telefono=" + telefono + ", username=" + username + ", area=" + area + ", odc=" + odc
+				+ "]";
+	}
+	
+	
 
 }

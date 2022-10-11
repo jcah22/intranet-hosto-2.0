@@ -18,13 +18,13 @@ public class ReqServiceImpl implements IReqService {
 	@Override
 	public List<Req> listarTodos() {
 		// TODO Auto-generated method stub
-		return null;
+		return reqrepository.findAll();
 	}
 
 	@Override
-	public void guardarReq(Req req) {
+	public Req guardarReq(Req req) {
 		
-		reqrepository.save(req);
+		return reqrepository.save(req);
 		
 
 	}

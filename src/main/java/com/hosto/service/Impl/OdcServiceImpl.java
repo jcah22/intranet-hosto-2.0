@@ -22,7 +22,8 @@ public class OdcServiceImpl implements IOdcService {
 	}
 
 	@Override
-	public void guardar(Odc odc) {
+	public Odc guardar(Odc odc) {
+		return odcrepository.save(odc);
 		// TODO Auto-generated method stub
 
 	}

@@ -1,5 +1,6 @@
 package com.hosto.models;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -11,7 +12,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Req {
+public class Req implements Serializable{
+
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -80,5 +84,13 @@ public class Req {
 	public void setOdcs(List<Odc> odcs) {
 		this.odcs = odcs;
 	}
+
+	@Override
+	public String toString() {
+		return "Req [id_req=" + id_req + ", codigo=" + codigo + ", nombre=" + nombre + ", empresa=" + empresa
+				+ ", odcs=" + odcs + "]";
+	}
+	
+	
 
 }

@@ -1,15 +1,20 @@
 package com.hosto.models;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Empresa {
+public class Empresa implements Serializable{
+
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +32,7 @@ public class Empresa {
 
 	private String telefono;
 
-	@OneToMany(mappedBy = "empresa")
+	@OneToMany(mappedBy = "empresa",fetch = FetchType.LAZY)
 	private List<Req> reqs;
 
 	public Empresa() {
@@ -110,5 +115,13 @@ public class Empresa {
 	public void setReqs(List<Req> reqs) {
 		this.reqs = reqs;
 	}
+
+	@Override
+	public String toString() {
+		return "Empresa [id_empresa=" + id_empresa + ", correo=" + correo + ", direccion=" + direccion + ", imagen="
+				+ imagen + ", nombre=" + nombre + ", rfc=" + rfc + ", telefono=" + telefono + ", reqs=" + reqs + "]";
+	}
+	
+	
 
 }

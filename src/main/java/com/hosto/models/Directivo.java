@@ -1,15 +1,20 @@
 package com.hosto.models;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Directivo {
+public class Directivo implements Serializable {
+
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +22,7 @@ public class Directivo {
 
 	private String nombre;
 
-	@OneToMany(mappedBy = "directivo")
+	@OneToMany(mappedBy = "directivo",fetch = FetchType.LAZY)
 	private List<Odc> odc;
 
 	public Directivo() {
@@ -54,5 +59,12 @@ public class Directivo {
 	public void setOdc(List<Odc> odc) {
 		this.odc = odc;
 	}
+
+	@Override
+	public String toString() {
+		return "Directivo [id_directivo=" + id_directivo + ", nombre=" + nombre + ", odc=" + odc + "]";
+	}
+	
+	
 
 }

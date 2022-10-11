@@ -1,14 +1,19 @@
 package com.hosto.models;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Cfdi {
+public class Cfdi implements Serializable{
+
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue
@@ -18,7 +23,8 @@ public class Cfdi {
 
 	private String nombre;
 
-	@OneToMany(mappedBy = "cfdi")
+	@OneToMany(mappedBy = "cfdi" ,fetch = 
+			FetchType.LAZY)
 	private List<Odc> odc;
 
 	public Cfdi() {
@@ -64,5 +70,12 @@ public class Cfdi {
 	public void setOdc(List<Odc> odc) {
 		this.odc = odc;
 	}
+
+	@Override
+	public String toString() {
+		return "Cfdi [id_cfdi=" + id_cfdi + ", codigo=" + codigo + ", nombre=" + nombre + ", odc=" + odc + "]";
+	}
+	
+	
 
 }

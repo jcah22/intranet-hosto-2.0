@@ -18,32 +18,32 @@ public class Area implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id_area;
+	private Long id_area;
 
 	private String nombre;
 
 	@OneToMany(mappedBy = "area")
 	private List<Usuario> usuario;
 
-	@OneToMany(mappedBy = "area")
-	private List<Odc> odc;
+	//@OneToMany(mappedBy = "area")
+	//private List<Odc> odc;
 
 	public Area() {
 
 	}
 
-	public Area(Integer id_area, String nombre, List<Usuario> usuario, List<Odc> odc) {
+	public Area(Long id_area, String nombre, List<Usuario> usuario) {
 		this.id_area = id_area;
 		this.nombre = nombre;
 		this.usuario = usuario;
-		this.odc = odc;
+		
 	}
 
-	public Integer getId_area() {
+	public Long getId_area() {
 		return id_area;
 	}
 
-	public void setId_area(Integer id_area) {
+	public void setId_area(Long id_area) {
 		this.id_area = id_area;
 	}
 
@@ -63,17 +63,11 @@ public class Area implements Serializable{
 		this.usuario = usuario;
 	}
 
-	public List<Odc> getOdc() {
-		return odc;
-	}
-
-	public void setOdc(List<Odc> odc) {
-		this.odc = odc;
-	}
+	
 
 	@Override
 	public String toString() {
-		return "Area [id_area=" + id_area + ", nombre=" + nombre + ", usuario=" + usuario + ", odc=" + odc + "]";
+		return "Area [id_area=" + id_area + ", nombre=" + nombre + ", usuario=" + usuario + ", odc=" +  "]";
 	}
 
 	

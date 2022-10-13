@@ -1,13 +1,10 @@
 package com.hosto.models;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Cfdi implements Serializable{
@@ -17,33 +14,33 @@ public class Cfdi implements Serializable{
 
 	@Id
 	@GeneratedValue
-	private Integer id_cfdi;
+	private Long id_cfdi;
 
 	private String codigo;
 
 	private String nombre;
 
-	@OneToMany(mappedBy = "cfdi" ,fetch = 
-			FetchType.LAZY)
-	private List<Odc> odc;
+	//@OneToMany(mappedBy = "cfdi" ,fetch = 
+	//		FetchType.LAZY)
+	//private List<Odc> odc;
 
 	public Cfdi() {
 
 	}
 
-	public Cfdi(Integer id_cfdi, String codigo, String nombre, List<Odc> odc) {
+	public Cfdi(Long id_cfdi, String codigo, String nombre) {
 
 		this.id_cfdi = id_cfdi;
 		this.codigo = codigo;
 		this.nombre = nombre;
-		this.odc = odc;
+		
 	}
 
-	public Integer getId_cfdi() {
+	public Long getId_cfdi() {
 		return id_cfdi;
 	}
 
-	public void setId_cfdi(Integer id_cfdi) {
+	public void setId_cfdi(Long id_cfdi) {
 		this.id_cfdi = id_cfdi;
 	}
 
@@ -63,17 +60,11 @@ public class Cfdi implements Serializable{
 		this.nombre = nombre;
 	}
 
-	public List<Odc> getOdc() {
-		return odc;
-	}
-
-	public void setOdc(List<Odc> odc) {
-		this.odc = odc;
-	}
+	
 
 	@Override
 	public String toString() {
-		return "Cfdi [id_cfdi=" + id_cfdi + ", codigo=" + codigo + ", nombre=" + nombre + ", odc=" + odc + "]";
+		return "Cfdi [id_cfdi=" + id_cfdi + ", codigo=" + codigo + ", nombre=" + nombre + ", odc=" +  "]";
 	}
 	
 	

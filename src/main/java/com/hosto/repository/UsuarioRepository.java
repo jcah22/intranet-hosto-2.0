@@ -3,9 +3,11 @@ package com.hosto.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.hosto.models.Empresa;
+import com.hosto.models.Usuario;
 
 @Repository
-public interface EmpresaRepository extends JpaRepository<Empresa, Long> {
+public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
+	
+	
 
 }

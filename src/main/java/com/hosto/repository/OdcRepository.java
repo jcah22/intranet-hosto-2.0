@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.hosto.models.Odc;
 
 @Repository
-public interface OdcRepository extends JpaRepository<Odc, Integer> {
+public interface OdcRepository extends JpaRepository<Odc, Long> {
 
 	@Query(value = "select * from odc WHERE odc.req_id= :filtro", nativeQuery = true)
 	List<Odc> findByOdcs(@Param("filtro") int filtro);

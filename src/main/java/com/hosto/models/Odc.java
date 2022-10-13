@@ -4,12 +4,13 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Odc implements Serializable{
@@ -19,39 +20,40 @@ public class Odc implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id_odc;
+	private Long id_odc;
 
 	private String descripcion;
 
 	private String factura;
 
+	@DateTimeFormat(pattern = "YYY-MM-dd")
 	private Date fecha;
 
-	private Boolean flete;
+	private String flete;
 
 	private Double total;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "req_id")
 	private Req req;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "status_id")
 	private Status status;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "directivo_id")
 	private Directivo directivo;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "cfdi_id")
 	private Cfdi cfdi;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "area_id")
 	private Area area;
 
@@ -59,7 +61,7 @@ public class Odc implements Serializable{
 
 	}
 
-	public Odc(Integer id_odc, String descripcion, String factura, Date fecha, Boolean flete, Double total, Req req,
+	public Odc(Long id_odc, String descripcion, String factura, Date fecha, String flete, Double total, Req req,
 			Status status, Directivo directivo, Cfdi cfdi, Usuario usuario, Area area) {
 
 		this.id_odc = id_odc;
@@ -76,11 +78,11 @@ public class Odc implements Serializable{
 		this.area = area;
 	}
 
-	public Integer getId_odc() {
+	public Long getId_odc() {
 		return id_odc;
 	}
 
-	public void setId_odc(Integer id_odc) {
+	public void setId_odc(Long id_odc) {
 		this.id_odc = id_odc;
 	}
 
@@ -108,11 +110,11 @@ public class Odc implements Serializable{
 		this.fecha = fecha;
 	}
 
-	public Boolean getFlete() {
+	public String getFlete() {
 		return flete;
 	}
 
-	public void setFlete(Boolean flete) {
+	public void setFlete(String flete) {
 		this.flete = flete;
 	}
 

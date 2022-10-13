@@ -18,7 +18,7 @@ public class Empresa implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id_empresa;
+	private Long id_empresa;
 
 	private String correo;
 
@@ -39,7 +39,7 @@ public class Empresa implements Serializable{
 
 	}
 
-	public Empresa(Integer id_empresa, String correo, String direccion, String imagen, String nombre, String rfc,
+	public Empresa(Long id_empresa, String correo, String direccion, String imagen, String nombre, String rfc,
 			String telefono, List<Req> reqs) {
 
 		this.id_empresa = id_empresa;
@@ -52,11 +52,11 @@ public class Empresa implements Serializable{
 		this.reqs = reqs;
 	}
 
-	public Integer getId_empresa() {
+	public Long getId_empresa() {
 		return id_empresa;
 	}
 
-	public void setId_empresa(Integer id_empresa) {
+	public void setId_empresa(Long id_empresa) {
 		this.id_empresa = id_empresa;
 	}
 

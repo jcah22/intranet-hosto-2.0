@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.hosto.models.Req;
 
 @Repository
-public interface ReqRepository extends JpaRepository<Req, Integer> {
+public interface ReqRepository extends JpaRepository<Req, Long> {
 
 	@Query(
 

@@ -1,14 +1,11 @@
 package com.hosto.models;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Directivo implements Serializable {
@@ -18,29 +15,29 @@ public class Directivo implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id_directivo;
+	private Long id_directivo;
 
 	private String nombre;
 
-	@OneToMany(mappedBy = "directivo",fetch = FetchType.LAZY)
-	private List<Odc> odc;
+	//@OneToMany(mappedBy = "directivo",fetch = FetchType.LAZY)
+	//private List<Odc> odc;
 
 	public Directivo() {
 
 	}
 
-	public Directivo(Integer id_directivo, String nombre, List<Odc> odc) {
+	public Directivo(Long id_directivo, String nombre) {
 
 		this.id_directivo = id_directivo;
 		this.nombre = nombre;
-		this.odc = odc;
+	
 	}
 
-	public Integer getId_directivo() {
+	public Long getId_directivo() {
 		return id_directivo;
 	}
 
-	public void setId_directivo(Integer id_directivo) {
+	public void setId_directivo(Long id_directivo) {
 		this.id_directivo = id_directivo;
 	}
 
@@ -52,17 +49,11 @@ public class Directivo implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public List<Odc> getOdc() {
-		return odc;
-	}
-
-	public void setOdc(List<Odc> odc) {
-		this.odc = odc;
-	}
+	
 
 	@Override
 	public String toString() {
-		return "Directivo [id_directivo=" + id_directivo + ", nombre=" + nombre + ", odc=" + odc + "]";
+		return "Directivo [id_directivo=" + id_directivo + ", nombre=" + nombre + ", odc=" +  "]";
 	}
 	
 	

@@ -19,6 +19,7 @@ import com.hosto.models.Empresa;
 import com.hosto.models.Odc;
 import com.hosto.models.Req;
 import com.hosto.models.Status;
+import com.hosto.models.Usuario;
 import com.hosto.service.IAreaService;
 import com.hosto.service.ICfdiService;
 import com.hosto.service.IDirectivoService;
@@ -26,6 +27,7 @@ import com.hosto.service.IEmpresaService;
 import com.hosto.service.IOdcService;
 import com.hosto.service.IReqService;
 import com.hosto.service.IStatusService;
+import com.hosto.service.IUsuarioService;
 
 @Controller
 public class HomeController {
@@ -50,6 +52,9 @@ public class HomeController {
 
 	@Autowired
 	private IStatusService statusservice;
+	
+	@Autowired
+	private IUsuarioService usuarioService;
 
 	Date date = new Date();
 	Calendar calendar = Calendar.getInstance();
@@ -106,19 +111,24 @@ public class HomeController {
 	}
 
 	@GetMapping("/newodc")
-	public String newodc(Model model, @ModelAttribute Odc odc) {
+	public String newodc(Model model) {
+		
+		Odc odc = new Odc();
 
 		List<Area> areas = areaservice.listarTodos();
 		List<Cfdi> cfdis = cfdiservice.listarTodos();
 		List<Directivo> directivos = directivoservice.listarTodos();
 		List<Req> reqs = reqservice.listarTodos();
-		List<Status> estatus = statusservice.listarTodos();
+		List<Status> status = statusservice.listarTodos();
+		List<Usuario> usuarios = usuarioService.listarTodos();
 
 		model.addAttribute("areas", areas);
 		model.addAttribute("cfdis", cfdis);
 		model.addAttribute("directivos", directivos);
 		model.addAttribute("reqs", reqs);
-		model.addAttribute("status", estatus);
+		model.addAttribute("status", status);
+		model.addAttribute("odc", odc);
+		model.addAttribute("usuarios", usuarios);
 
 		return "newodc";
 
@@ -135,7 +145,7 @@ public class HomeController {
 			System.out.println("Algo fallo y no se pudo guardar el registro ");
 
 		}
-		return "temp";
+		return "redirect:/?filtro=z";
 	}
 
 }

@@ -20,38 +20,43 @@
 	<div class="container">
 		<hr>
 		<form th:action="@{/saveodc}" th:object="${odc}" autocomplete="off" method="POST">
+		
 			<div class="form-row">
+			
 				<div class="form-group col-md-6">
 					<label for="descripcion">Descripción</label>
 					<input type="text" class="form-control" th:field="*{descripcion}">
 				</div>
+				
 				<div class="form-group col-md-6">
 					<label for="factura">Factura</label>
-					<input type="factura" class="form-control" th:field="*{factura}">
+					<input type="text" class="form-control" th:field="*{factura}">
 				</div>
+				
 			</div>
+
 
 
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="fecha">Fecha</label>
-					<input type="date" class="form-control">
+					<input type="date" class="form-control" th:field="*{fecha}">
 				</div>
 				<div class="form-group col-md-6">
 					<fieldset class="form-group row mt-3">
 						<legend class="col-form-label col-sm-2 float-sm-left pt-0">Flete </legend>
 						<div class="col-sm-10">
 							<div class="form-check">
-								<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
-									value="option1" checked>
-								<label class="form-check-label" for="gridRadios1">
+								<input class="form-check-input" type="radio" name="si" id="si"
+									value="si" checked  th:field="*{flete}">
+								<label class="form-check-label" for="si">
 									Si
 								</label>
 							</div>
 							<div class="form-check">
-								<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
-									value="option2">
-								<label class="form-check-label" for="gridRadios2">
+								<input class="form-check-input" type="radio" name="no" id="no"
+									value="no"  th:field="*{flete}">
+								<label class="form-check-label" for="no">
 									No
 								</label>
 							</div>
@@ -60,6 +65,8 @@
 					</fieldset>
 				</div>
 			</div>
+
+
 
 			<div class="form-row">
 				<div class="form-group col-md-6 ">
@@ -72,6 +79,7 @@
 
 					</div>
 				</div>
+
 				<div class="form-group col-md-6">
 
 
@@ -79,7 +87,14 @@
 						<option th:each="a:${areas}" th:value="${a.id_area}" th:text="${a.nombre}"></option>
 					</select>
 				</div>
+
 			</div>
+
+
+
+
+
+
 
 
 			<div class="form-row">
@@ -101,6 +116,9 @@
 			</div>
 
 
+
+
+
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<select id="req" class="form-control" th:field="*{req}">
@@ -110,17 +128,31 @@
 
 				</div>
 				<div class="form-group col-md-6">
-					<select id="req" class="form-control" th:field="*{status}">
-						<option th:each="s:${estatus}" th:value="${s.id_status}" th:text="${s.nombre}"></option>
+					<select id="status" class="form-control" th:field="*{status}">
+						<option th:each="s:${status}" th:value="${s.id_status}" th:text="${s.nombre}"></option>
 					</select>
 
 				</div>
 
 
 			</div>
+			
+			<div class="form-row justify-content-center mt-3">
+			
+					<div class="form-group col-md-10">
+					<select id="usuario" class="form-control" th:field="*{usuario}">
+						<option th:each="u:${usuarios}" th:value="${u.id_usuario}" th:text="${u.nombres}+ ' '+${u.apellidoPaterno}+ ' '+ ${u.apellidoMaterno}">
+						</option>
+					</select>
+
+				</div>
+				
+
+			</div>
+			
 
 			<div class="form-row justify-content-center mt-3">
-				<div class="form-group col-md-8 ">
+				<div class="form-group col-md-6 ">
 
 
 					<input type="submit" class="btn btn-outline-success btn-lg btn-block"

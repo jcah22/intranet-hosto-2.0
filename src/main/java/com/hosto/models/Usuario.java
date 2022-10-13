@@ -13,14 +13,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Usuario implements Serializable{
+public class Usuario implements Serializable {
 
-	
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id_usuario;
+	private Long id_usuario;
 
 	private String apellidoPaterno;
 
@@ -55,10 +54,9 @@ public class Usuario implements Serializable{
 
 	}
 
-	public Usuario(Integer id_usuario, String apellidoPaterno, String apellidoMaterno, String nombres, String correo,
+	public Usuario(Long id_usuario, String apellidoPaterno, String apellidoMaterno, String nombres, String correo,
 			Date fechaIngreso, Date fechaNacimiento, String foto, String password, Boolean status, String telefono,
 			String username, Area area, List<Odc> odc) {
-
 		this.id_usuario = id_usuario;
 		this.apellidoPaterno = apellidoPaterno;
 		this.apellidoMaterno = apellidoMaterno;
@@ -75,11 +73,11 @@ public class Usuario implements Serializable{
 		this.odc = odc;
 	}
 
-	public Integer getId_usuario() {
+	public Long getId_usuario() {
 		return id_usuario;
 	}
 
-	public void setId_usuario(Integer id_usuario) {
+	public void setId_usuario(Long id_usuario) {
 		this.id_usuario = id_usuario;
 	}
 
@@ -186,15 +184,9 @@ public class Usuario implements Serializable{
 	public void setOdc(List<Odc> odc) {
 		this.odc = odc;
 	}
-
-	@Override
-	public String toString() {
-		return "Usuario [id_usuario=" + id_usuario + ", apellidoPaterno=" + apellidoPaterno + ", apellidoMaterno="
-				+ apellidoMaterno + ", nombres=" + nombres + ", correo=" + correo + ", fechaIngreso=" + fechaIngreso
-				+ ", fechaNacimiento=" + fechaNacimiento + ", foto=" + foto + ", password=" + password + ", status="
-				+ status + ", telefono=" + telefono + ", username=" + username + ", area=" + area + ", odc=" + odc
-				+ "]";
-	}
+	
+	
+	
 	
 	
 

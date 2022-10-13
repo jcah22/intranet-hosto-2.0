@@ -1,13 +1,11 @@
 package com.hosto.models;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Status  implements Serializable{
@@ -17,28 +15,28 @@ public class Status  implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id_status;
+	private Long id_status;
 
 	private String nombre;
 
-	@OneToMany(mappedBy = "status")
-	private List<Odc> odc;
+	//@OneToMany(mappedBy = "status")
+	//private List<Odc> odc;
 
 	public Status() {
 
 	}
 
-	public Status(Integer id_status, String nombre, List<Odc> odc) {
+	public Status(Long id_status, String nombre) {
 		this.id_status = id_status;
 		this.nombre = nombre;
-		this.odc = odc;
+		
 	}
 
-	public Integer getId_status() {
+	public Long getId_status() {
 		return id_status;
 	}
 
-	public void setId_status(Integer id_status) {
+	public void setId_status(Long id_status) {
 		this.id_status = id_status;
 	}
 
@@ -50,17 +48,11 @@ public class Status  implements Serializable{
 		this.nombre = nombre;
 	}
 
-	public List<Odc> getOdc() {
-		return odc;
-	}
-
-	public void setOdc(List<Odc> odc) {
-		this.odc = odc;
-	}
+	
 
 	@Override
 	public String toString() {
-		return "Status [id_status=" + id_status + ", nombre=" + nombre + ", odc=" + odc + "]";
+		return "Status [id_status=" + id_status + ", nombre=" + nombre + ", odc=" +  "]";
 	}
 	
 	

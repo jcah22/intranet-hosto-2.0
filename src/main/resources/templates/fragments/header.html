@@ -1,64 +1,124 @@
 <table class="table" th:fragment="header">
-	<thead>
-		<tr>
-			<th scope="col">
-				<a th:href="@{/?filtro=H}">
-					<img th:src="@{/images/hosto-logo.jpg}" class="img-fluid" alt="" width="100px" /></a>
-			</th>
-			<th scope="col">
-				<a th:href="@{/?filtro=S}">
-					<img th:src="@{/images/logo-siglo.jpg}" class="img-fluid img-rounded" width="100px" alt="" />
-				</a>
-			</th>
-			<th scope="col">
-				<a th:href="@{/?filtro=M}">
-					<img th:src="@{/images/logo-mecanz.jpg}" class="img-fluid img-rounded" width="100px" alt="" /></a>
-			</th>
-			<th scope="col">
-				<a th:href="@{/?filtro=Z}">
-					<img th:src="@{/images/zerey-logo.jpg}" class="img-fluid img-rounded" alt="" width="100px" />
-				</a>
-			</th>
-			<th scope="col">
-				<a th:href="@{/?filtro=P}">
-					<img th:src="@{/images/logo-pcmm.png}" class="img-fluid img-rounded" width="100px" alt="" />
-				</a>
-			</th>
-			<th scope="col">
-				<a th:href="@{/?filtro=T}">
-					<img th:src="@{/images/logo-tbn.png}" class="img-fluid img-rounded" width="100px" alt="" />
-				</a>
-			</th>
-			<th scope="col">
-				<a th:href="@{/?filtro=A}">
-					<img th:src="@{/images/amron-logo.jpg}" class="img-fluid img-rounded" alt="" width="100px" />
-				</a>
-			</th>
-			<th scope="col">
-				<a th:href="@{/?filtro=O}">
-					<img th:src="@{/images/logo-osonyer.jpg}" class="img-fluid img-rounded" width="100px" alt="" />
-				</a>
-			</th>
-			<th scope="col">
-				<a th:href="@{/?filtro=L}">
-					<img th:src="@{/images/logo-len.png}" class="img-fluid img-rounded" width="100px" alt="" />
-				</a>
-			</th>
-			<th scope="col">
-				<a th:href="@{/?filtro=G}">
-					<img th:src="@{/images/logo-lats.jpg}" class="img-fluid img-rounded" alt="" width="100px" />
-				</a>
-			</th>
-			<th scope="col">
-				<a th:href="@{/?filtro=R}">
-					<img th:src="@{/images/logo-rakroj.jpg}" class="img-fluid img-rounded" width="100px" alt="" />
-				</a>
-			</th>
-			<th scope="col">
-				<a th:href="@{/?filtro=PO}">
-					<img th:src="@{/images/logo-ponderacion.png}" class="img-fluid img-rounded" width="100px" alt="" />
-				</a>
-			</th>
-		</tr>
-	</thead>
+  <thead>
+    <tr>
+      <th scope="col">
+        <a th:href="@{/?filtro=H}">
+          <img
+            th:src="@{/images/hosto-logo.jpg}"
+            class="img-fluid"
+            alt=""
+            width="100px"
+        /></a>
+      </th>
+      <th scope="col">
+        <a th:href="@{/?filtro=S}">
+          <img
+            th:src="@{/images/logo-siglo.jpg}"
+            class="img-fluid img-rounded"
+            width="100px"
+            alt=""
+          />
+        </a>
+      </th>
+      <th scope="col">
+        <a th:href="@{/?filtro=M}">
+          <img
+            th:src="@{/images/logo-mecanz.jpg}"
+            class="img-fluid img-rounded"
+            width="100px"
+            alt=""
+        /></a>
+      </th>
+      <th scope="col">
+        <a th:href="@{/?filtro=Z}">
+          <img
+            th:src="@{/images/zerey-logo.jpg}"
+            class="img-fluid img-rounded"
+            alt=""
+            width="100px"
+          />
+        </a>
+      </th>
+      <th scope="col">
+        <a th:href="@{/?filtro=P}">
+          <img
+            th:src="@{/images/logo-pcmm.png}"
+            class="img-fluid img-rounded"
+            width="100px"
+            alt=""
+          />
+        </a>
+      </th>
+      <th scope="col">
+        <a th:href="@{/?filtro=T}">
+          <img
+            th:src="@{/images/logo-tbn.png}"
+            class="img-fluid img-rounded"
+            width="100px"
+            alt=""
+          />
+        </a>
+      </th>
+      <th scope="col">
+        <a th:href="@{/?filtro=A}">
+          <img
+            th:src="@{/images/amron-logo.jpg}"
+            class="img-fluid img-rounded"
+            alt=""
+            width="100px"
+          />
+        </a>
+      </th>
+      <th scope="col">
+        <a th:href="@{/?filtro=O}">
+          <img
+            th:src="@{/images/logo-osonyer.jpg}"
+            class="img-fluid img-rounded"
+            width="100px"
+            alt=""
+          />
+        </a>
+      </th>
+      <th scope="col">
+        <a th:href="@{/?filtro=L}">
+          <img
+            th:src="@{/images/logo-len.png}"
+            class="img-fluid img-rounded"
+            width="100px"
+            alt=""
+          />
+        </a>
+      </th>
+      <th scope="col">
+        <a th:href="@{/?filtro=G}">
+          <img
+            th:src="@{/images/logo-lats.jpg}"
+            class="img-fluid img-rounded"
+            alt=""
+            width="100px"
+          />
+        </a>
+      </th>
+      <th scope="col">
+        <a th:href="@{/?filtro=R}">
+          <img
+            th:src="@{/images/logo-rakroj.jpg}"
+            class="img-fluid img-rounded"
+            width="100px"
+            alt=""
+          />
+        </a>
+      </th>
+      <th scope="col">
+        <a th:href="@{/?filtro=PO}">
+          <img
+            th:src="@{/images/logo-ponderacion.png}"
+            class="img-fluid img-rounded"
+            width="100px"
+            alt=""
+          />
+        </a>
+      </th>
+    </tr>
+  </thead>
 </table>

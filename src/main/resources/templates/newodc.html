@@ -37,7 +37,8 @@
               type="text"
               class="form-control"
               th:field="*{descripcion}"
-              placeholder="Descripción" required="true"
+              placeholder="Descripción"
+              required="true"
             />
           </div>
 
@@ -47,7 +48,8 @@
               type="text"
               class="form-control"
               th:field="*{factura}"
-              placeholder="Factura" required="true"
+              placeholder="Factura"
+              required="true"
             />
           </div>
         </div>
@@ -109,13 +111,19 @@
                 class="form-control"
                 aria-label="Amount (to the nearest dollar)"
                 placeholder="Total"
-                th:field="*{total}" required="true"
+                th:field="*{total}"
+                required="true"
               />
             </div>
           </div>
 
           <div class="form-group col-md-6">
-            <select id="area" class="form-control" th:field="*{area}" required="true">
+            <select
+              id="area"
+              class="form-control"
+              th:field="*{area}"
+              required="true"
+            >
               <option value="" selected="selected">Selecione un Area</option>
               <option
                 th:each="a:${areas}"
@@ -128,8 +136,13 @@
 
         <div class="form-row">
           <div class="form-group col-md-6">
-            <select id="cfdi" class="form-control" th:field="*{cfdi}" required="true">
-				<option value="" selected="selected">Selecione uso CFDI</option>
+            <select
+              id="cfdi"
+              class="form-control"
+              th:field="*{cfdi}"
+              required="true"
+            >
+              <option value="" selected="selected">Selecione uso CFDI</option>
               <option
                 th:each="c:${cfdis }"
                 th:value="${c.id_cfdi}"
@@ -138,8 +151,15 @@
             </select>
           </div>
           <div class="form-group col-md-6">
-            <select id="directivo" class="form-control" th:field="*{directivo}" required="true">
-				<option value="" selected="selected">Selecione un Directivo</option>
+            <select
+              id="directivo"
+              class="form-control"
+              th:field="*{directivo}"
+              required="true"
+            >
+              <option value="" selected="selected">
+                Selecione un Directivo
+              </option>
               <option
                 th:each="d:${directivos}"
                 th:value="${d.id_directivo}"
@@ -151,8 +171,15 @@
 
         <div class="form-row">
           <div class="form-group col-md-6">
-            <select id="req" class="form-control" th:field="*{req}" required="true">
-				<option value="" selected="selected">Selecione Requisición</option>
+            <select
+              id="req"
+              class="form-control"
+              th:field="*{req}"
+              required="true"
+            >
+              <option value="" selected="selected">
+                Selecione Requisición
+              </option>
               <option
                 th:each="r:${reqs}"
                 th:value="${r.id_req}"
@@ -161,8 +188,13 @@
             </select>
           </div>
           <div class="form-group col-md-6">
-            <select id="status" class="form-control" th:field="*{status}" required="true">
-				<option value="" selected="selected">Selecione un Estatus</option>
+            <select
+              id="status"
+              class="form-control"
+              th:field="*{status}"
+              required="true"
+            >
+              <option value="" selected="selected">Selecione un Estatus</option>
               <option
                 th:each="s:${status}"
                 th:value="${s.id_status}"
@@ -174,8 +206,13 @@
 
         <div class="form-row justify-content-center mt-3">
           <div class="form-group col-md-10">
-            <select id="usuario" class="form-control" th:field="*{usuario}" required="true">
-				<option value="" selected="selected">Selecione Usuario</option>
+            <select
+              id="usuario"
+              class="form-control"
+              th:field="*{usuario}"
+              required="true"
+            >
+              <option value="" selected="selected">Selecione Usuario</option>
               <option
                 th:each="u:${usuarios}"
                 th:value="${u.id_usuario}"

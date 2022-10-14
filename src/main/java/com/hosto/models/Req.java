@@ -10,9 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Req implements Serializable{
+public class Req implements Serializable {
 
-	
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -27,8 +26,8 @@ public class Req implements Serializable{
 	@JoinColumn(name = "empresa_id")
 	private Empresa empresa;
 
-	//@OneToMany(mappedBy = "req")
-	//private List<Odc> odcs;
+	// @OneToMany(mappedBy = "req")
+	// private List<Odc> odcs;
 
 	public Req() {
 
@@ -40,7 +39,7 @@ public class Req implements Serializable{
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.empresa = empresa;
-		
+
 	}
 
 	public Long getId_req() {
@@ -75,14 +74,10 @@ public class Req implements Serializable{
 		this.empresa = empresa;
 	}
 
-	
-
 	@Override
 	public String toString() {
 		return "Req [id_req=" + id_req + ", codigo=" + codigo + ", nombre=" + nombre + ", empresa=" + empresa
 				+ ", odcs=" + "]";
 	}
-	
-	
 
 }

@@ -10,7 +10,6 @@ import javax.persistence.Id;
 @Entity
 public class Directivo implements Serializable {
 
-	
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -19,8 +18,8 @@ public class Directivo implements Serializable {
 
 	private String nombre;
 
-	//@OneToMany(mappedBy = "directivo",fetch = FetchType.LAZY)
-	//private List<Odc> odc;
+	// @OneToMany(mappedBy = "directivo",fetch = FetchType.LAZY)
+	// private List<Odc> odc;
 
 	public Directivo() {
 
@@ -30,7 +29,7 @@ public class Directivo implements Serializable {
 
 		this.id_directivo = id_directivo;
 		this.nombre = nombre;
-	
+
 	}
 
 	public Long getId_directivo() {
@@ -49,13 +48,9 @@ public class Directivo implements Serializable {
 		this.nombre = nombre;
 	}
 
-	
-
 	@Override
 	public String toString() {
-		return "Directivo [id_directivo=" + id_directivo + ", nombre=" + nombre + ", odc=" +  "]";
+		return "Directivo [id_directivo=" + id_directivo + ", nombre=" + nombre + ", odc=" + "]";
 	}
-	
-	
 
 }

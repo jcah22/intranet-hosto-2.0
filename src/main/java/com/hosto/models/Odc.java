@@ -13,9 +13,8 @@ import javax.persistence.ManyToOne;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-public class Odc implements Serializable{
+public class Odc implements Serializable {
 
-	
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -180,7 +179,5 @@ public class Odc implements Serializable{
 				+ ", flete=" + flete + ", total=" + total + ", req=" + req + ", status=" + status + ", directivo="
 				+ directivo + ", cfdi=" + cfdi + ", usuario=" + usuario + ", area=" + area + "]";
 	}
-	
-	
 
 }

@@ -184,10 +184,5 @@ public class Usuario implements Serializable {
 	public void setOdc(List<Odc> odc) {
 		this.odc = odc;
 	}
-	
-	
-	
-	
-	
 
 }

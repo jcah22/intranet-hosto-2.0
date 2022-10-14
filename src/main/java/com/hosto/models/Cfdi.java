@@ -7,9 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Cfdi implements Serializable{
+public class Cfdi implements Serializable {
 
-	
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -20,9 +19,9 @@ public class Cfdi implements Serializable{
 
 	private String nombre;
 
-	//@OneToMany(mappedBy = "cfdi" ,fetch = 
-	//		FetchType.LAZY)
-	//private List<Odc> odc;
+	// @OneToMany(mappedBy = "cfdi" ,fetch =
+	// FetchType.LAZY)
+	// private List<Odc> odc;
 
 	public Cfdi() {
 
@@ -33,7 +32,7 @@ public class Cfdi implements Serializable{
 		this.id_cfdi = id_cfdi;
 		this.codigo = codigo;
 		this.nombre = nombre;
-		
+
 	}
 
 	public Long getId_cfdi() {
@@ -60,13 +59,9 @@ public class Cfdi implements Serializable{
 		this.nombre = nombre;
 	}
 
-	
-
 	@Override
 	public String toString() {
-		return "Cfdi [id_cfdi=" + id_cfdi + ", codigo=" + codigo + ", nombre=" + nombre + ", odc=" +  "]";
+		return "Cfdi [id_cfdi=" + id_cfdi + ", codigo=" + codigo + ", nombre=" + nombre + ", odc=" + "]";
 	}
-	
-	
 
 }

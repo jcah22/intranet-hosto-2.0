@@ -10,10 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Area implements Serializable{
+public class Area implements Serializable {
 
-	
-	
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -25,8 +23,8 @@ public class Area implements Serializable{
 	@OneToMany(mappedBy = "area")
 	private List<Usuario> usuario;
 
-	//@OneToMany(mappedBy = "area")
-	//private List<Odc> odc;
+	// @OneToMany(mappedBy = "area")
+	// private List<Odc> odc;
 
 	public Area() {
 
@@ -36,7 +34,7 @@ public class Area implements Serializable{
 		this.id_area = id_area;
 		this.nombre = nombre;
 		this.usuario = usuario;
-		
+
 	}
 
 	public Long getId_area() {
@@ -63,12 +61,9 @@ public class Area implements Serializable{
 		this.usuario = usuario;
 	}
 
-	
-
 	@Override
 	public String toString() {
-		return "Area [id_area=" + id_area + ", nombre=" + nombre + ", usuario=" + usuario + ", odc=" +  "]";
+		return "Area [id_area=" + id_area + ", nombre=" + nombre + ", usuario=" + usuario + ", odc=" + "]";
 	}
 
-	
 }

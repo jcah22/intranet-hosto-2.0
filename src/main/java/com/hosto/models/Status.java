@@ -8,9 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Status  implements Serializable{
+public class Status implements Serializable {
 
-	
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -19,8 +18,8 @@ public class Status  implements Serializable{
 
 	private String nombre;
 
-	//@OneToMany(mappedBy = "status")
-	//private List<Odc> odc;
+	// @OneToMany(mappedBy = "status")
+	// private List<Odc> odc;
 
 	public Status() {
 
@@ -29,7 +28,7 @@ public class Status  implements Serializable{
 	public Status(Long id_status, String nombre) {
 		this.id_status = id_status;
 		this.nombre = nombre;
-		
+
 	}
 
 	public Long getId_status() {
@@ -48,13 +47,9 @@ public class Status  implements Serializable{
 		this.nombre = nombre;
 	}
 
-	
-
 	@Override
 	public String toString() {
-		return "Status [id_status=" + id_status + ", nombre=" + nombre + ", odc=" +  "]";
+		return "Status [id_status=" + id_status + ", nombre=" + nombre + ", odc=" + "]";
 	}
-	
-	
 
 }

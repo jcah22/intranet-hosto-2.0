@@ -135,7 +135,7 @@ public class HomeController {
 	}
 
 	@PostMapping("/saveodc")
-	public String saveOdc(@ModelAttribute Odc odc) {
+	public String saveOdc(@ModelAttribute Odc odc,@ModelAttribute Req req) {
 
 		try {
 			odcService.guardar(odc);
@@ -145,7 +145,7 @@ public class HomeController {
 			System.out.println("Algo fallo y no se pudo guardar el registro ");
 
 		}
-		return "redirect:/?filtro=z";
+		return "redirect:/odc?filtro=" + req.getId_req();
 	}
 
 }

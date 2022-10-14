@@ -26,7 +26,7 @@ public class Odc implements Serializable{
 
 	private String factura;
 
-	@DateTimeFormat(pattern = "YYY-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fecha;
 
 	private String flete;

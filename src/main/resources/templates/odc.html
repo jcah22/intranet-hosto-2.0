@@ -30,7 +30,7 @@
 	</div>
 
 
-	<div class="container-fluid mt-2">
+	<div class="container-fluid mt-2 mb-5">
 		<table class="table table-hover text-center ">
 			<thead>
 				<tr>
@@ -51,13 +51,13 @@
 				<tr>
 
 					<td th:text=" ${odc.req.codigo}+'/'+ ${odc.id_odc} "></td>
-					<td th:text="${odc.descripcion}"></td>
-					<td th:text="${odc.factura}"></td>
+					<td th:text="${#strings.capitalize(odc.descripcion)}"></td>
+					<td th:text="${#strings.toUpperCase(odc.factura)}"></td> 
 					<td th:text="${#dates.format(odc.fecha,'dd-MM-yyyy')}"></td>
 					<td>
-						<span th:if="${odc.flete == 1}" class="badge badge-pill badge-success">Si</span>
+						<span th:if="${odc.flete == 'SI'}" class="badge badge-pill badge-success">SI</span>
 
-						<span th:unless="${odc.flete == 0}" class="badge badge-pill badge-danger">No</span>
+						<span th:unless="${odc.flete == 'SI'}" class="badge badge-pill badge-danger">NO</span>
 					</td>
 
 					<td th:text="${odc.cfdi.codigo}+'-'+${odc.cfdi.nombre}"></td>
@@ -74,7 +74,7 @@
 					<td th:text="${odc.usuario.username}"></td>   
 
 					<td th:text="${odc.usuario.area.nombre}"></td>
-					<td th:text="'$'+ ${odc.total}"></td>
+					<td th:text="'$'+${#numbers.formatDecimal(odc.total, 1, 'COMMA', 2, 'POINT')}"> </td>
 
 				</tr>
 

@@ -28,6 +28,9 @@
       rel="stylesheet"
       th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css}"
     />
+    
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <title>Ordenes de Compra</title>
   </head>
@@ -35,7 +38,34 @@
   <body>
     <header th:insert="fragments/header :: header"></header>
 
-    <div class="form-row">
+    
+	<div class="arrow"></div>
+
+	<!-- flecha ir arriba   -->
+	<button class="btn-scrolltop btn-lg" id="btn_scrolltop">
+		<i class="bi bi-arrow-up-circle-fill "></i>
+	</button>
+
+	<script>
+		const btn_scrolltop = document.getElementById("btn_scrolltop")
+		btn_scrolltop.addEventListener('click', () => {
+			window.scrollTo({
+				top: 0,
+				behavior: "smooth"
+			})
+		})
+
+		window.onscroll = () => {
+			if (window.scrollY < 500) {
+				btn_scrolltop.classList.remove("btn-scrolltop-on")
+			}
+			else {
+				btn_scrolltop.classList.add("btn-scrolltop-on")
+			}
+		}
+	</script>
+
+    <div class=" form-row">
       <div class="form-group col-md-6">
         <div class="container-fluid d-flex justify-content-start">
         <a class="btn btn-outline-primary" href="javascript:history.back()"
@@ -57,7 +87,7 @@
    
 
     <div class="container-fluid mt-2 mb-5">
-      <table class="table table-hover text-center">
+      <table class="table table-hover text-center mb-5">
         <thead>
           <tr>
             <th scope="col">ODC</th>

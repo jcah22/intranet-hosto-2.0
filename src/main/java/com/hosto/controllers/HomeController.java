@@ -73,7 +73,7 @@ public class HomeController {
 	}
 
 	@GetMapping("/odc")
-	public String odc(Model m, @RequestParam int filtro) {
+	public String odc( Model m, @RequestParam int filtro) {
 
 		m.addAttribute("odcs", odcService.findAllByQuery(filtro));
 		calendar.setTime(date);

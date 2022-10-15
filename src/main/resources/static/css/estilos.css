@@ -8,9 +8,9 @@ html{
 footer{
     position: absolute;
     bottom: 0;
-    color: #fff;
+    color: blue;
     text-align: center;
-    height: 30px;
+    height: 15px;
     width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;

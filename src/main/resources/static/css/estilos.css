@@ -22,9 +22,6 @@ footer{
     justify-content: center;
 }
 
-
-
-
 .btn-scrolltop{
 	position: fixed;
 	bottom: 10px;
@@ -38,11 +35,7 @@ footer{
 	transform: translateY(100px);
 	transition: 1s;
 
-
-
-
 }
-
 
 .btn-scrolltop-on{
 	transform: translateY(0);

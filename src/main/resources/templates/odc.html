@@ -37,8 +37,6 @@
 
   <body>
     <header th:insert="fragments/header :: header"></header>
-
-    
 	<div class="arrow"></div>
 
 	<!-- flecha ir arriba   -->
@@ -101,6 +99,7 @@
             <th scope="col">USUARIO</th>
             <th scope="col">AREA</th>
             <th scope="col">TOTAL</th>
+            <th scope="col">ACCIONES</th>
           </tr>
         </thead>
         <tbody th:each="odc : ${odcs}">
@@ -138,6 +137,13 @@
             <td
               th:text="'$'+${#numbers.formatDecimal(odc.total, 1, 'COMMA', 2, 'POINT')}"
             ></td>
+            <td>
+              <a href="#">
+              <i class="bi bi-trash"></i>&nbsp; </a>
+              <a href="#">
+              <i class="bi bi-pencil"></i> </a>
+            </td>
+            
           </tr>
         </tbody>
       </table>

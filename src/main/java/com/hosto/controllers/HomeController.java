@@ -4,9 +4,13 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,7 +56,7 @@ public class HomeController {
 
 	@Autowired
 	private IStatusService statusservice;
-	
+
 	@Autowired
 	private IUsuarioService usuarioService;
 
@@ -73,7 +77,7 @@ public class HomeController {
 	}
 
 	@GetMapping("/odc")
-	public String odc( Model m, @RequestParam int filtro) {
+	public String odc(Model m, @RequestParam int filtro) {
 
 		m.addAttribute("odcs", odcService.findAllByQuery(filtro));
 		calendar.setTime(date);
@@ -112,7 +116,7 @@ public class HomeController {
 
 	@GetMapping("/newodc")
 	public String newodc(Model model) {
-		
+
 		Odc odc = new Odc();
 
 		List<Area> areas = areaservice.listarTodos();
@@ -135,17 +139,14 @@ public class HomeController {
 	}
 
 	@PostMapping("/saveodc")
-	public String saveOdc(@ModelAttribute Odc odc,@ModelAttribute Req req) {
+	public String saveOdc( @ModelAttribute Odc odc, @ModelAttribute Req req) {
 
-		try {
-			odcService.guardar(odc);
-			
-			System.out.println("registro guardado con exito!");
-		} catch (Exception e) {
-			System.out.println("Algo fallo y no se pudo guardar el registro ");
+		
 
-		}
+		odcService.guardar(odc);
+
 		return "redirect:/odc?filtro=" + req.getId_req();
+
 	}
 
 }

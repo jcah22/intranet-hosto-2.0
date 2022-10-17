@@ -40,6 +40,7 @@
               placeholder="Descripción"
               required="true"
             />
+           
           </div>
 
           <div class="form-group col-md-6">
@@ -51,6 +52,7 @@
               placeholder="Factura"
               required="true"
             />
+            
           </div>
         </div>
 
@@ -63,6 +65,7 @@
               th:field="*{fecha}"
               required="true"
             />
+            
           </div>
           <div class="form-group col-md-6">
             <fieldset class="form-group row mt-3">
@@ -140,7 +143,7 @@
               id="cfdi"
               class="form-control"
               th:field="*{cfdi}"
-              required="true"
+             required="true"
             >
               <option value="" selected="selected">Selecione uso CFDI</option>
               <option
@@ -183,7 +186,7 @@
               <option
                 th:each="r:${reqs}"
                 th:value="${r.id_req}"
-                th:text="${r.codigo}+'  '+ ${r.nombre}"
+                th:text="${r.codigo}+'  '+ ${r.nombre}" 
               ></option>
             </select>
           </div>

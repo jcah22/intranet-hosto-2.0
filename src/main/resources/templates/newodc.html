@@ -16,6 +16,8 @@
       crossorigin="anonymous"
     />
 
+   
+
     <title>Nueva Orden de Compra</title>
   </head>
 
@@ -40,7 +42,6 @@
               placeholder="Descripción"
               required="true"
             />
-           
           </div>
 
           <div class="form-group col-md-6">
@@ -52,7 +53,6 @@
               placeholder="Factura"
               required="true"
             />
-            
           </div>
         </div>
 
@@ -65,7 +65,6 @@
               th:field="*{fecha}"
               required="true"
             />
-            
           </div>
           <div class="form-group col-md-6">
             <fieldset class="form-group row mt-3">
@@ -143,7 +142,7 @@
               id="cfdi"
               class="form-control"
               th:field="*{cfdi}"
-             required="true"
+              required="true"
             >
               <option value="" selected="selected">Selecione uso CFDI</option>
               <option
@@ -186,7 +185,7 @@
               <option
                 th:each="r:${reqs}"
                 th:value="${r.id_req}"
-                th:text="${r.codigo}+'  '+ ${r.nombre}" 
+                th:text="${r.codigo}+'  '+ ${r.nombre}"
               ></option>
             </select>
           </div>
@@ -231,11 +230,13 @@
               type="submit"
               class="btn btn-outline-success btn-lg btn-block"
               value="Guardar Orden de Compra"
+              
             />
           </div>
         </div>
       </form>
     </div>
+   
 
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

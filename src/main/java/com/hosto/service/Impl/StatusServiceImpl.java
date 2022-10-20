@@ -18,25 +18,25 @@ public class StatusServiceImpl implements IStatusService {
 
 	@Override
 	public List<Status> listarTodos() {
-		// TODO Auto-generated method stub
+		
 		return estatusrepo.findAll();
 	}
 
 	@Override
 	public void guardarReq(Status status) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public Status buscarPorId(Long id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public void eliminar(Long id) {
-		// TODO Auto-generated method stub
+	
 		
 	}
 

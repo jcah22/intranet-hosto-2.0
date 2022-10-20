@@ -18,25 +18,25 @@ public class DirectivoServiceImpl implements IDirectivoService{
 
 	@Override
 	public List<Directivo> listarTodos() {
-		// TODO Auto-generated method stub
+		
 		return directivorepository.findAll();
 	}
 
 	@Override
 	public void guardar(Directivo directivo) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public Directivo buscarPorId(Long id) {
-		// TODO Auto-generated method stub
+	
 		return null;
 	}
 
 	@Override
 	public void eliminar(Long id) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 

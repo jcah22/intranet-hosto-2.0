@@ -16,8 +16,6 @@
       crossorigin="anonymous"
     />
 
-   
-
     <title>Nueva Orden de Compra</title>
   </head>
 
@@ -131,6 +129,7 @@
                 th:each="a:${areas}"
                 th:value="${a.id_area}"
                 th:text="${a.nombre}"
+                
               ></option>
             </select>
           </div>
@@ -149,6 +148,7 @@
                 th:each="c:${cfdis }"
                 th:value="${c.id_cfdi}"
                 th:text="${c.codigo}+ ' - '+ ${c.nombre}"
+                class="font-weight-bold"
               ></option>
             </select>
           </div>
@@ -166,6 +166,7 @@
                 th:each="d:${directivos}"
                 th:value="${d.id_directivo}"
                 th:text="${d.nombre}"
+                class="font-weight-bold"
               ></option>
             </select>
           </div>
@@ -186,6 +187,7 @@
                 th:each="r:${reqs}"
                 th:value="${r.id_req}"
                 th:text="${r.codigo}+'  '+ ${r.nombre}"
+                class="font-weight-bold"
               ></option>
             </select>
           </div>
@@ -201,13 +203,14 @@
                 th:each="s:${status}"
                 th:value="${s.id_status}"
                 th:text="${s.nombre}"
+                class="font-weight-bold"
               ></option>
             </select>
           </div>
         </div>
 
-        <div class="form-row justify-content-center mt-3">
-          <div class="form-group col-md-10">
+        <div class="form-row">
+          <div class="form-group col-md-6">
             <select
               id="usuario"
               class="form-control"
@@ -219,6 +222,24 @@
                 th:each="u:${usuarios}"
                 th:value="${u.id_usuario}"
                 th:text="${u.nombres}+ ' '+${u.apellidoPaterno}+ ' '+ ${u.apellidoMaterno}"
+                class="font-weight-bold"
+              ></option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-6">
+            <select
+              id="proveedor"
+              class="form-control"
+              th:field="*{proveedor}"
+              required="true"
+            >
+              <option value="" selected="selected">Seleccione Proveedor</option>
+              <option
+                th:each="p:${prov}"
+                th:value="${p.id_proveedor}"
+                th:text="${p.nombre}+' - ' + ${p.rfc}"
+                class="font-weight-bold"
               ></option>
             </select>
           </div>
@@ -230,13 +251,11 @@
               type="submit"
               class="btn btn-outline-success btn-lg btn-block"
               value="Guardar Orden de Compra"
-              
             />
           </div>
         </div>
       </form>
     </div>
-   
 
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

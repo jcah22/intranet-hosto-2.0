@@ -9,9 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -25,7 +22,6 @@ public class Odc implements Serializable {
 	private Long id_odc;
 
 	private String descripcion;
-
 
 	private String factura;
 
@@ -60,13 +56,16 @@ public class Odc implements Serializable {
 	@JoinColumn(name = "area_id")
 	private Area area;
 
+	@ManyToOne
+	@JoinColumn(name = "proveedor_id")
+	private Proveedor proveedor;
+
 	public Odc() {
 
 	}
 
 	public Odc(Long id_odc, String descripcion, String factura, Date fecha, String flete, Double total, Req req,
-			Status status, Directivo directivo, Cfdi cfdi, Usuario usuario, Area area) {
-
+			Status status, Directivo directivo, Cfdi cfdi, Usuario usuario, Area area, Proveedor proveedor) {
 		this.id_odc = id_odc;
 		this.descripcion = descripcion;
 		this.factura = factura;
@@ -79,6 +78,11 @@ public class Odc implements Serializable {
 		this.cfdi = cfdi;
 		this.usuario = usuario;
 		this.area = area;
+		this.proveedor = proveedor;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	public Long getId_odc() {
@@ -177,11 +181,28 @@ public class Odc implements Serializable {
 		this.area = area;
 	}
 
+	public Proveedor getProveedor() {
+		return proveedor;
+	}
+
+	public void setProveedor(Proveedor proveedor) {
+		this.proveedor = proveedor;
+	}
+
 	@Override
 	public String toString() {
 		return "Odc [id_odc=" + id_odc + ", descripcion=" + descripcion + ", factura=" + factura + ", fecha=" + fecha
 				+ ", flete=" + flete + ", total=" + total + ", req=" + req + ", status=" + status + ", directivo="
-				+ directivo + ", cfdi=" + cfdi + ", usuario=" + usuario + ", area=" + area + "]";
+				+ directivo + ", cfdi=" + cfdi + ", usuario=" + usuario + ", area=" + area + ", proveedor=" + proveedor
+				+ "]";
 	}
+
+	
+	
+	
+
+	
+
+
 
 }

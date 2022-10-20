@@ -1,26 +1,23 @@
 package com.hosto.controllers;
-
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.hosto.models.Area;
 import com.hosto.models.Cfdi;
 import com.hosto.models.Directivo;
 import com.hosto.models.Empresa;
 import com.hosto.models.Odc;
+import com.hosto.models.Proveedor;
 import com.hosto.models.Req;
 import com.hosto.models.Status;
 import com.hosto.models.Usuario;
@@ -29,6 +26,7 @@ import com.hosto.service.ICfdiService;
 import com.hosto.service.IDirectivoService;
 import com.hosto.service.IEmpresaService;
 import com.hosto.service.IOdcService;
+import com.hosto.service.IProveedorService;
 import com.hosto.service.IReqService;
 import com.hosto.service.IStatusService;
 import com.hosto.service.IUsuarioService;
@@ -59,6 +57,9 @@ public class HomeController {
 
 	@Autowired
 	private IUsuarioService usuarioService;
+
+	@Autowired
+	private IProveedorService proveedorService;
 
 	Date date = new Date();
 	Calendar calendar = Calendar.getInstance();
@@ -125,6 +126,7 @@ public class HomeController {
 		List<Req> reqs = reqservice.listarTodos();
 		List<Status> status = statusservice.listarTodos();
 		List<Usuario> usuarios = usuarioService.listarTodos();
+		List<Proveedor> proveedores = proveedorService.listarTodos();
 
 		model.addAttribute("areas", areas);
 		model.addAttribute("cfdis", cfdis);
@@ -133,20 +135,34 @@ public class HomeController {
 		model.addAttribute("status", status);
 		model.addAttribute("odc", odc);
 		model.addAttribute("usuarios", usuarios);
+		model.addAttribute("prov", proveedores);
 
 		return "newodc";
 
 	}
 
 	@PostMapping("/saveodc")
-	public String saveOdc( @ModelAttribute Odc odc, @ModelAttribute Req req) {
-
-		
+	public String saveOdc(@ModelAttribute Odc odc, @ModelAttribute Req req) {
 
 		odcService.guardar(odc);
 
 		return "redirect:/odc?filtro=" + req.getId_req();
 
+	}
+
+	@GetMapping("/detalleodc/{id}")
+	public String detalleodc(@PathVariable Long id, Model model) { 
+
+
+		Odc detalleOdc = odcService.buscarPorId(id);
+
+
+		model.addAttribute("titulo", "Detalle de Orden de Compra:") ;
+		model.addAttribute("detalle", detalleOdc.toString());
+
+		
+
+		return "detalleodc";
 	}
 
 }

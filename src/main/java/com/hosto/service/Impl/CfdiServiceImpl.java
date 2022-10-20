@@ -23,19 +23,19 @@ public class CfdiServiceImpl implements ICfdiService{
 
 	@Override
 	public void guardar(Cfdi cfdi) {
-		// TODO Auto-generated method stub
+	
 		
 	}
 
 	@Override
 	public Cfdi buscarPorId(Long id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public void eliminar(Long id) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 

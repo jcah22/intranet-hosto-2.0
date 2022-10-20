@@ -17,25 +17,25 @@ public class EmpresaServiceImpl implements IEmpresaService {
 
 	@Override
 	public List<Empresa> listarTodos() {
-		// TODO Auto-generated method stub
+		
 		return empresaRepository.findAll();
 	}
 
 	@Override
 	public void guardar(Empresa empresa) {
-		// TODO Auto-generated method stub
+	
 
 	}
 
 	@Override
 	public Empresa buscarPorId(Long id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public void eliminar(Long id) {
-		// TODO Auto-generated method stub
+		
 
 	}
 

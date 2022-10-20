@@ -17,25 +17,25 @@ public class AreaServiceImpl implements IAreaService {
 
 	@Override
 	public List<Area> listarTodos() {
-		// TODO Auto-generated method stub
+		
 		return arearepository.findAll();
 	}
 
 	@Override
 	public void guardar(Area area) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public Area buscarPorId(Long id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public void eliminar(Long id) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 

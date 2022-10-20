@@ -17,7 +17,7 @@ public class ReqServiceImpl implements IReqService {
 
 	@Override
 	public List<Req> listarTodos() {
-		// TODO Auto-generated method stub
+		
 		return reqrepository.findAll();
 	}
 
@@ -31,19 +31,19 @@ public class ReqServiceImpl implements IReqService {
 
 	@Override
 	public Req buscarPorId(Long id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public void eliminar(Long id) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	@Override
 	public List<Req> findAllByQuery(String palabraClave) {
-		// TODO Auto-generated method stub
+	
 		return reqrepository.searchFiltroRepository(palabraClave);
 	}
 

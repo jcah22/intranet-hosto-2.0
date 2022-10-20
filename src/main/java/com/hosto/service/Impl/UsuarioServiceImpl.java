@@ -17,25 +17,25 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
 	@Override
 	public List<Usuario> listarTodos() {
-		// TODO Auto-generated method stub
+		
 		return usuariorepository.findAll();
 	}
 
 	@Override
 	public void guardarReq(Usuario usuario) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public Usuario buscarPorId(Long id) {
-		// TODO Auto-generated method stub
+	
 		return null;
 	}
 
 	@Override
 	public void eliminar(Long id) {
-		// TODO Auto-generated method stub
+	
 		
 	}
 

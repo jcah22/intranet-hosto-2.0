@@ -18,8 +18,8 @@ public class Directivo implements Serializable {
 
 	private String nombre;
 
-	// @OneToMany(mappedBy = "directivo",fetch = FetchType.LAZY)
-	// private List<Odc> odc;
+	
+	
 
 	public Directivo() {
 

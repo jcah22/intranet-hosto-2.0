@@ -24,74 +24,150 @@
     <title>Detalle odc</title>
   </head>
   <body>
-    <div class="container py-4">
-      <div class="card-header"></div>
-      <div class="card-body">
-        <ul class="list-group my-2">
-          <li
-            class="list-group-item list-group-item-primary"
-            th:text="'Datos de la Orden de Compra'"
-          ></li>
-          <li
-            class="list-group-iem"
-            th:text="'DESCRIPCION:'+${odc.descripcion}"
-          ></li>
-          <li class="list-group-iem" th:text="'FATURA:'+${odc.factura}"></li>
-          <li class="list-group-iem" th:text="'FECHA:'+${odc.fecha}"></li>
-          <li class="list-group-iem" th:text="'FLETE:'+${odc.flete}"></li>
-          <li class="list-group-iem" th:text="'TOTAL:'+${odc.total}"></li>
-          <li
-            class="list-group-iem"
-            th:text="'ESTATUS:'+${odc.status.nombre}"
-          ></li>
-          <li
-            class="list-group-iem"
-            th:text="'USUARIO:'+ ${odc.usuario.nombres}+ ' '+${odc.usuario.apellidoPaterno}+ ' '+ ${odc.usuario.apellidoMaterno}"
-          ></li>
-          <li
-            class="list-group-iem"
-            th:text="'AREA QUE SOLICITA:'+${odc.area.nombre}"
-          ></li>
-          <li
-            class="list-group-iem"
-            th:text="'REQUISICIÓN:'+ ${odc.req.codigo} + ' - ' + ${odc.req.nombre}"
-          ></li>
-          <li
-            class="list-group-iem"
-            th:text="'USO CFDI: ' + ${odc.cfdi.codigo} +' - '+ ${odc.cfdi.nombre}"
-          ></li>
-          <li
-            class="list-group-iem"
-            th:text="'AUTORIZO: ' +${odc.directivo.nombre}"
-          ></li>
-          <h2>Datos del proveedor</h2>
-          <li
-            class="list-group-iem"
-            th:text="'NOMBRE: ' + ${odc.proveedor.nombre}"
-          ></li>
-          <li
-            class="list-group-iem"
-            th:text="'RFC:'+ ${odc.proveedor.rfc}"
-          ></li>
-          <li
-            class="list-group-iem"
-            th:text="'DIRECCIÓN:' + ${odc.proveedor.direccion}"
-          ></li>
-          <li
-            class="list-group-iem"
-            th:text="'EMAIL:'+${odc.proveedor.correo}"
-          ></li>
-          <li
-            class="list-group-iem"
-            th:text="'TELEFONO:' +${odc.proveedor.telefono}"
-          ></li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <div class="container-fluid d-flex justify-content-start">
-          <a class="btn btn-outline-primary" href="javascript:history.back()"
-            ><i class="bi bi-chevron-double-left"></i>Regresar</a
-          >
+    <div class="container py-5">
+      <div class="card">
+        <div
+          class="card-header bg-dark text-white font-italic text-center font-weight-bold text-uppercase"
+          th:text="${titulo}+ '  '  +${odc.req.codigo}+ '/' +${odc.id_odc} + '   ' + ${odc.req.nombre}"
+        ></div>
+        <div class="card-body">
+          <div class="form-row">
+            <label class="col-sm-2 col-md-2 col-form-label">Descripción:</label>
+
+            <label
+              class="col-sm-10 col-md-10 col-form-label border-bottom"
+              th:text="${odc.descripcion}"
+            ></label>
+          </div>
+
+          <div class="form-row">
+            <label class="col-sm-2 col-md-2 col-form-label">Factura:</label>
+
+            <label
+              class="col-sm-10 col-md-10 col-form-label border-bottom"
+              th:text="${#strings.toUpperCase(odc.factura)}"
+            ></label>
+          </div>
+
+          <div class="form-row">
+            <label class="col-sm-2 col-md-2 col-form-label">Fecha:</label>
+
+            <label
+              class="col-sm-4 col-md-4 col-form-label border-bottom"
+              th:text="${#dates.format(odc.fecha,'dd-MM-yyyy')}"
+            ></label>
+            <label class="col-sm-2 col-md-2 col-form-label">Flete:</label>
+
+            <label
+              class="col-sm-4 col-md-4 col-form-label border-bottom"
+              th:text="${odc.flete}"
+            ></label>
+          </div>
+
+          <div class="form-row">
+            <label class="col-sm-2 col-md-2 col-form-label">Estatus:</label>
+
+            <label
+              class="col-sm-4 col-md-4 col-form-label border-bottom"
+              th:text="${odc.status.nombre}"
+            ></label>
+            <label class="col-sm-2 col-md-2 col-form-label"
+              >Area que Solicita:</label
+            >
+
+            <label
+              class="col-sm-4 col-md-4 col-form-label border-bottom"
+              th:text="${odc.area.nombre}"
+            ></label>
+          </div>
+
+          <div class="form-row">
+            <label class="col-sm-2 col-md-2 col-form-label"
+              >Elaboro la ODC:</label
+            >
+
+            <label
+              class="col-sm-4 col-md-4 col-form-label border-bottom"
+              th:text="${odc.usuario.nombres}+ ' '+${odc.usuario.apellidoPaterno}+ ' '+ ${odc.usuario.apellidoMaterno}"
+            ></label>
+            <label class="col-sm-2 col-md-2 col-form-label">Uso de CFDI:</label>
+
+            <label
+              class="col-sm-4 col-md-4 col-form-label border-bottom"
+              th:text="${odc.cfdi.codigo} +' - '+ ${odc.cfdi.nombre}"
+            ></label>
+          </div>
+
+          <div class="form-row">
+            <label class="col-sm-2 col-md-2 col-form-label"
+              >Autorizo la ODC:</label
+            >
+
+            <label
+              class="col-sm-4 col-md-4 col-form-label border-bottom"
+              th:text="${odc.directivo.nombre}"
+            ></label>
+            <label class="col-sm-2 col-md-2 col-form-label">Total:</label>
+
+            <label
+              class="col-sm-4 col-md-4 col-form-label border-bottom"
+              th:text="'$'+${#numbers.formatDecimal(odc.total, 1, 'COMMA', 2, 'POINT')}"
+            ></label>
+          </div>
+          <br />
+          <hr />
+          <div class="container text-center">
+            <h5>Datos del Proveedor</h5>
+          </div>
+
+          <div class="form-row">
+            <label class="col-sm-2 col-md-2 col-form-label">Nombre:</label>
+
+            <label
+              class="col-sm-4 col-md-4 col-form-label border-bottom"
+              th:text="${#strings.toUpperCase(odc.proveedor.nombre)}"
+            ></label>
+            <label class="col-sm-2 col-md-2 col-form-label">RFC:</label>
+
+            <label
+              class="col-sm-4 col-md-4 col-form-label border-bottom"
+              th:text="${#strings.toUpperCase(odc.proveedor.rfc)}"
+            ></label>
+          </div>
+
+          <div class="form-row">
+            <label class="col-sm-2 col-md-2 col-form-label">Correo:</label>
+
+            <label
+              class="col-sm-4 col-md-4 col-form-label border-bottom"
+              th:text="${odc.proveedor.correo}"
+            ></label>
+            <label class="col-sm-2 col-md-2 col-form-label">Telefono:</label>
+
+            <label
+              class="col-sm-4 col-md-4 col-form-label border-bottom"
+              th:text="${odc.proveedor.telefono}"
+            ></label>
+          </div>
+
+          <div class="form-row">
+            <label class="col-sm-2 col-md-2 col-form-label">Dirección:</label>
+
+            <label
+              class="col-sm-10 col-md-10 col-form-label border-bottom"
+              th:text="${odc.proveedor.direccion}"
+            ></label>
+          </div>
+
+
+
+        </div>
+        <div class="card-footer bg-dark">
+          <div class="container-fluid ">
+            <a class="btn btn-outline-primary " href="javascript:history.back()"
+              ><i class="bi bi-chevron-double-left"></i>Regresar</a
+            >
+          </div>
         </div>
       </div>
     </div>

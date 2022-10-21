@@ -162,6 +162,7 @@ public class HomeController {
 			return "redirect:/odc?filtro=" + req.getId_req();
 		}
 		model.addAttribute("odc", detalleOdc);
+		model.addAttribute("titulo", "Detalle de la Orden de Compra:");
 
 		return "detalleodc";
 	}

@@ -167,4 +167,11 @@ public class HomeController {
 		return "detalleodc";
 	}
 
+	@GetMapping("/login")
+	public String login(){
+
+		return "login";
+	}
+
+
 }

@@ -11,33 +11,30 @@ import com.hosto.service.IStatusService;
 
 @Service
 public class StatusServiceImpl implements IStatusService {
-	
-	
+
 	@Autowired
 	private EstatusRepository estatusrepo;
 
 	@Override
 	public List<Status> listarTodos() {
-		
+
 		return estatusrepo.findAll();
 	}
 
 	@Override
 	public void guardarReq(Status status) {
-		
-		
+
 	}
 
 	@Override
 	public Status buscarPorId(Long id) {
-		
+
 		return null;
 	}
 
 	@Override
 	public void eliminar(Long id) {
-	
-		
+
 	}
 
 }

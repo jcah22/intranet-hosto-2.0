@@ -18,9 +18,6 @@ public class Status implements Serializable {
 
 	private String nombre;
 
-	// @OneToMany(mappedBy = "status")
-	// private List<Odc> odc;
-
 	public Status() {
 
 	}

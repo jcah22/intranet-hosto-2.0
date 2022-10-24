@@ -17,39 +17,37 @@ public class ReqServiceImpl implements IReqService {
 
 	@Override
 	public List<Req> listarTodos() {
-		
+
 		return reqrepository.findAll();
 	}
 
 	@Override
 	public Req guardarReq(Req req) {
-		
+
 		return reqrepository.save(req);
-		
 
 	}
 
 	@Override
 	public Req buscarPorId(Long id) {
-		
+
 		return null;
 	}
 
 	@Override
 	public void eliminar(Long id) {
-		
 
 	}
 
 	@Override
 	public List<Req> findAllByQuery(String palabraClave) {
-	
+
 		return reqrepository.searchFiltroRepository(palabraClave);
 	}
 
 	@Override
 	public List<Req> findAllByCodigo(String codigo) {
-		
+
 		return reqrepository.findByCodigo(codigo);
 	}
 

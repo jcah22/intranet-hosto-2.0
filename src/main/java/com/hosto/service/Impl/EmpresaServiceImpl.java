@@ -17,25 +17,23 @@ public class EmpresaServiceImpl implements IEmpresaService {
 
 	@Override
 	public List<Empresa> listarTodos() {
-		
+
 		return empresaRepository.findAll();
 	}
 
 	@Override
 	public void guardar(Empresa empresa) {
-	
 
 	}
 
 	@Override
 	public Empresa buscarPorId(Long id) {
-		
+
 		return null;
 	}
 
 	@Override
 	public void eliminar(Long id) {
-		
 
 	}
 

@@ -10,33 +10,31 @@ import com.hosto.repository.CfdiRepository;
 import com.hosto.service.ICfdiService;
 
 @Service
-public class CfdiServiceImpl implements ICfdiService{
-	
+public class CfdiServiceImpl implements ICfdiService {
+
 	@Autowired
 	private CfdiRepository cfdirepository;
 
 	@Override
 	public List<Cfdi> listarTodos() {
-		
+
 		return cfdirepository.findAll();
 	}
 
 	@Override
 	public void guardar(Cfdi cfdi) {
-	
-		
+
 	}
 
 	@Override
 	public Cfdi buscarPorId(Long id) {
-		
+
 		return null;
 	}
 
 	@Override
 	public void eliminar(Long id) {
-		
-		
+
 	}
 
 }

@@ -18,9 +18,6 @@ public class Directivo implements Serializable {
 
 	private String nombre;
 
-	
-	
-
 	public Directivo() {
 
 	}

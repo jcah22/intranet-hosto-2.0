@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.hosto.models.Area;
 
 @Repository
-public interface AreaRepository extends JpaRepository<Area, Long>{
+public interface AreaRepository extends JpaRepository<Area, Long> {
 
 }

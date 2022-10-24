@@ -4,10 +4,8 @@ import java.util.List;
 
 import com.hosto.models.Status;
 
-
-
 public interface IStatusService {
-	
+
 	public List<Status> listarTodos();
 
 	public void guardarReq(Status status);

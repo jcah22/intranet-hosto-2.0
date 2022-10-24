@@ -19,10 +19,6 @@ public class Cfdi implements Serializable {
 
 	private String nombre;
 
-	// @OneToMany(mappedBy = "cfdi" ,fetch =
-	// FetchType.LAZY)
-	// private List<Odc> odc;
-
 	public Cfdi() {
 
 	}

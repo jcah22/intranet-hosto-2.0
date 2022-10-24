@@ -20,14 +20,13 @@
   </head>
 
   <body>
-    
-   
-
     <div class="container">
       <h1
-			class="text-center font-italic text-success border-top-0  border-bottom border-right-0 border-left-0 mt-5  border border-warning">
-			Nueva orden de Compra</h1>
-    
+        class="text-center font-italic text-success border-top-0 border-bottom border-right-0 border-left-0 mt-5 border border-warning"
+      >
+        Nueva orden de Compra
+      </h1>
+
       <form
         th:action="@{/saveodc}"
         th:object="${odc}"
@@ -133,7 +132,6 @@
                 th:each="a:${areas}"
                 th:value="${a.id_area}"
                 th:text="${a.nombre}"
-                
               ></option>
             </select>
           </div>

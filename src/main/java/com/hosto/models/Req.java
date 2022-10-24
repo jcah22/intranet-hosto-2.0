@@ -26,9 +26,6 @@ public class Req implements Serializable {
 	@JoinColumn(name = "empresa_id")
 	private Empresa empresa;
 
-	// @OneToMany(mappedBy = "req")
-	// private List<Odc> odcs;
-
 	public Req() {
 
 	}

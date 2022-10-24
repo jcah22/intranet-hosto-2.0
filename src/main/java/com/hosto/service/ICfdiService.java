@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.hosto.models.Cfdi;
 
-
-
 public interface ICfdiService {
 
 	public List<Cfdi> listarTodos();

@@ -11,32 +11,30 @@ import com.hosto.service.IUsuarioService;
 
 @Service
 public class UsuarioServiceImpl implements IUsuarioService {
-	
+
 	@Autowired
 	private UsuarioRepository usuariorepository;
 
 	@Override
 	public List<Usuario> listarTodos() {
-		
+
 		return usuariorepository.findAll();
 	}
 
 	@Override
 	public void guardarReq(Usuario usuario) {
-		
-		
+
 	}
 
 	@Override
 	public Usuario buscarPorId(Long id) {
-	
+
 		return null;
 	}
 
 	@Override
 	public void eliminar(Long id) {
-	
-		
+
 	}
 
 }

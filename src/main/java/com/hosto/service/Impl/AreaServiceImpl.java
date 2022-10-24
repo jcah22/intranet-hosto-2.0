@@ -11,32 +11,30 @@ import com.hosto.service.IAreaService;
 
 @Service
 public class AreaServiceImpl implements IAreaService {
-	
+
 	@Autowired
 	private AreaRepository arearepository;
 
 	@Override
 	public List<Area> listarTodos() {
-		
+
 		return arearepository.findAll();
 	}
 
 	@Override
 	public void guardar(Area area) {
-		
-		
+
 	}
 
 	@Override
 	public Area buscarPorId(Long id) {
-		
+
 		return null;
 	}
 
 	@Override
 	public void eliminar(Long id) {
-		
-		
+
 	}
 
 }

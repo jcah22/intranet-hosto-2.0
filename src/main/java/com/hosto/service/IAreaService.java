@@ -4,10 +4,8 @@ import java.util.List;
 
 import com.hosto.models.Area;
 
-
-
 public interface IAreaService {
-	
+
 	public List<Area> listarTodos();
 
 	public void guardar(Area area);

@@ -4,10 +4,8 @@ import java.util.List;
 
 import com.hosto.models.Usuario;
 
-
-
 public interface IUsuarioService {
-	
+
 	public List<Usuario> listarTodos();
 
 	public void guardarReq(Usuario usuario);

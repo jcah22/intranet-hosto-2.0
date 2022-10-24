@@ -19,6 +19,4 @@ public interface ReqRepository extends JpaRepository<Req, Long> {
 
 	List<Req> findByCodigo(String codigo);
 
-	
-
 }

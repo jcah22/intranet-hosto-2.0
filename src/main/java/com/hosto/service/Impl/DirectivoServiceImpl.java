@@ -10,34 +10,31 @@ import com.hosto.repository.DirectivoRepository;
 import com.hosto.service.IDirectivoService;
 
 @Service
-public class DirectivoServiceImpl implements IDirectivoService{
-	
-	
+public class DirectivoServiceImpl implements IDirectivoService {
+
 	@Autowired
 	private DirectivoRepository directivorepository;
 
 	@Override
 	public List<Directivo> listarTodos() {
-		
+
 		return directivorepository.findAll();
 	}
 
 	@Override
 	public void guardar(Directivo directivo) {
-		
-		
+
 	}
 
 	@Override
 	public Directivo buscarPorId(Long id) {
-	
+
 		return null;
 	}
 
 	@Override
 	public void eliminar(Long id) {
-		
-		
+
 	}
 
 }

@@ -44,14 +44,3 @@ footer {
   max-width: 150px;
 }
 
-.tableodc{
- width: 100%;
-  background-image: url("/src/main/resources/static/images/0.jpg");
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-}

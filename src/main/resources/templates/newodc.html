@@ -20,10 +20,14 @@
   </head>
 
   <body>
-    <h1 class="text-center mt-3 text-primary">Nueva Orden de Compra</h1>
+    
+   
 
     <div class="container">
-      <hr />
+      <h1
+			class="text-center font-italic text-success border-top-0  border-bottom border-right-0 border-left-0 mt-5  border border-warning">
+			Nueva orden de Compra</h1>
+    
       <form
         th:action="@{/saveodc}"
         th:object="${odc}"

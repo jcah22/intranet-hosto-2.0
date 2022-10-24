@@ -17,4 +17,8 @@ public interface ReqRepository extends JpaRepository<Req, Long> {
 
 	List<Req> searchFiltroRepository(String filtro);
 
+	List<Req> findByCodigo(String codigo);
+
+	
+
 }

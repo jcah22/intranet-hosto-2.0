@@ -67,6 +67,12 @@ public class HomeController {
 	Calendar calendar = Calendar.getInstance();
 
 	@GetMapping("/")
+	public String index() {
+
+		return "login";
+	}
+
+	@GetMapping("/reqs")
 	public String home(Model m, @RequestParam String filtro) {
 
 		calendar.setTime(date);
@@ -168,10 +174,9 @@ public class HomeController {
 	}
 
 	@GetMapping("/login")
-	public String login(){
+	public String login() {
 
 		return "login";
 	}
-
 
 }

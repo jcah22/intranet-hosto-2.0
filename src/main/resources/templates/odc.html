@@ -106,7 +106,7 @@
           <tr>
             <td th:text=" ${odc.req.codigo}+'/'+ ${odc.id_odc} "></td>
 
-            <td th:text="${#strings.capitalize(odc.descripcion)}"></td>
+            <td class=" descripcionodc text-truncate "  th:text="${#strings.capitalize(odc.descripcion)}"></td>
             <td th:text="${#strings.toUpperCase(odc.factura)}"></td>
             <td th:text="${#dates.format(odc.fecha,'dd-MM-yyyy')}"></td>
 

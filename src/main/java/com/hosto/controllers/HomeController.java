@@ -67,7 +67,10 @@ public class HomeController {
 	Calendar calendar = Calendar.getInstance();
 
 	@GetMapping("/")
-	public String index() {
+	public String index(Model model) {
+		calendar.setTime(date);
+		int dateYear = calendar.get(Calendar.YEAR);
+		model.addAttribute("fecha", dateYear);
 
 		return "login";
 	}

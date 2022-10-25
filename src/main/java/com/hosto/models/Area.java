@@ -23,8 +23,7 @@ public class Area implements Serializable {
 	@OneToMany(mappedBy = "area")
 	private List<Usuario> usuario;
 
-	// @OneToMany(mappedBy = "area")
-	// private List<Odc> odc;
+	
 
 	public Area() {
 

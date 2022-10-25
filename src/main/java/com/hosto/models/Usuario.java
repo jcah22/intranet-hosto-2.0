@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+
 @Entity
 public class Usuario implements Serializable {
 
@@ -42,6 +43,8 @@ public class Usuario implements Serializable {
 	private String telefono;
 
 	private String username;
+
+	
 
 	@ManyToOne
 	@JoinColumn(name = "area_id")

@@ -17,10 +17,12 @@ public class DatabaseWebSecurity extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        
-        auth.jdbcAuthentication().dataSource(dataSource);
+
+        String consulta = "select username ,password ,status from usuario where username=?";
+        String consulta2 = "select u.username , p.perfil from usuario u join perfil p on u.usuario_id == p.id where u.username=?";
+
+        auth.jdbcAuthentication().dataSource(dataSource).usersByUsernameQuery(consulta)
+                .authoritiesByUsernameQuery(consulta2);
     }
 
-
-    
 }

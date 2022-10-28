@@ -3,7 +3,6 @@ package com.hosto.models;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
 
 @Entity
 public class Usuario implements Serializable {
@@ -44,8 +42,6 @@ public class Usuario implements Serializable {
 
 	private String username;
 
-	
-
 	@ManyToOne
 	@JoinColumn(name = "area_id")
 	private Area area;
@@ -53,13 +49,17 @@ public class Usuario implements Serializable {
 	@OneToMany(mappedBy = "usuario")
 	private List<Odc> odc;
 
+	@ManyToOne
+	@JoinColumn(name = "perfil_id")
+	private Perfil perfil;
+
 	public Usuario() {
 
 	}
 
 	public Usuario(Long id_usuario, String apellidoPaterno, String apellidoMaterno, String nombres, String correo,
 			Date fechaIngreso, Date fechaNacimiento, String foto, String password, Boolean status, String telefono,
-			String username, Area area, List<Odc> odc) {
+			String username, Area area, List<Odc> odc, Perfil perfil) {
 		this.id_usuario = id_usuario;
 		this.apellidoPaterno = apellidoPaterno;
 		this.apellidoMaterno = apellidoMaterno;
@@ -74,6 +74,11 @@ public class Usuario implements Serializable {
 		this.username = username;
 		this.area = area;
 		this.odc = odc;
+		this.perfil = perfil;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	public Long getId_usuario() {
@@ -187,5 +192,17 @@ public class Usuario implements Serializable {
 	public void setOdc(List<Odc> odc) {
 		this.odc = odc;
 	}
+
+	public Perfil getPerfil() {
+		return perfil;
+	}
+
+	public void setPerfil(Perfil perfil) {
+		this.perfil = perfil;
+	}
+
+	
+
+	
 
 }

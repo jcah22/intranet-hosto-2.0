@@ -9,6 +9,7 @@ public class Perfil {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private Integer id;
+	
 	private String perfil;
 
 	public Integer getId() {

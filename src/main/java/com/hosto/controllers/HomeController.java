@@ -16,6 +16,7 @@ import com.hosto.models.Cfdi;
 import com.hosto.models.Directivo;
 import com.hosto.models.Empresa;
 import com.hosto.models.Odc;
+import com.hosto.models.Perfil;
 import com.hosto.models.Proveedor;
 import com.hosto.models.Req;
 import com.hosto.models.Status;
@@ -25,6 +26,7 @@ import com.hosto.service.ICfdiService;
 import com.hosto.service.IDirectivoService;
 import com.hosto.service.IEmpresaService;
 import com.hosto.service.IOdcService;
+import com.hosto.service.IPerfilService;
 import com.hosto.service.IProveedorService;
 import com.hosto.service.IReqService;
 import com.hosto.service.IStatusService;
@@ -59,6 +61,10 @@ public class HomeController {
 
 	@Autowired
 	private IProveedorService proveedorService;
+
+	@Autowired
+	private IPerfilService perfilService;
+
 
 	Date date = new Date();
 	Calendar calendar = Calendar.getInstance();
@@ -177,6 +183,18 @@ public class HomeController {
 	public String login() {
 
 		return "login";
+	}
+
+
+	@GetMapping("/newuser")
+	public String newUser(Model model,Perfil perfil){
+
+		Usuario usuario = null;
+		model.addAttribute("perfil", perfilService.listarTodos());
+
+	
+
+		return "newuser";
 	}
 
 }

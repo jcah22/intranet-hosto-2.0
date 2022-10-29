@@ -129,7 +129,7 @@
             </td>
 
             <td th:text="${odc.cfdi.codigo}"></td>
-            <td th:text="${odc.directivo.nombre}"></td>
+            <td  class="directivoodc text-truncate" th:text="${odc.directivo.nombre}"></td>
 
             <td th:switch="${odc.status.id_status}">
               <span th:case="1" class="badge badge-success">Autorizada</span>

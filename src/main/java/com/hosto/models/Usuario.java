@@ -36,7 +36,7 @@ public class Usuario implements Serializable {
 
 	private String password;
 
-	private Boolean status;
+	private Long status;
 
 	private String telefono;
 
@@ -58,7 +58,7 @@ public class Usuario implements Serializable {
 	}
 
 	public Usuario(Long id_usuario, String apellidoPaterno, String apellidoMaterno, String nombres, String correo,
-			Date fechaIngreso, Date fechaNacimiento, String foto, String password, Boolean status, String telefono,
+			Date fechaIngreso, Date fechaNacimiento, String foto, String password, Long status, String telefono,
 			String username, Area area, List<Odc> odc, Perfil perfil) {
 		this.id_usuario = id_usuario;
 		this.apellidoPaterno = apellidoPaterno;
@@ -153,11 +153,11 @@ public class Usuario implements Serializable {
 		this.password = password;
 	}
 
-	public Boolean getStatus() {
+	public Long getStatus() {
 		return status;
 	}
 
-	public void setStatus(Boolean status) {
+	public void setStatus(Long status) {
 		this.status = status;
 	}
 

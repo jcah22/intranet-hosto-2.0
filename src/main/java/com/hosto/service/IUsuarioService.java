@@ -8,7 +8,7 @@ public interface IUsuarioService {
 
 	public List<Usuario> listarTodos();
 
-	public void guardarReq(Usuario usuario);
+	public void guardarUsuario(Usuario usuario);
 
 	public Usuario buscarPorId(Long id);
 

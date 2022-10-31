@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <!-- Required meta tags -->
@@ -17,9 +17,10 @@
 <body>
     <div class="container-fluid col-sm-4  mdcol-sm-6 col-md-6   mt-5">
         <div class="card ">
-            <h5 class="card-header text-center bg-dark text-white">Nuevo Usuario</h5>
-            <div class="card-body">
-                <form th:action="@{/saveuser}" th:object="${usuario}">
+            <form th:action="@{/saveuser}" th:object="${usuario}" autocomplete="off" method="POST">
+                <h5 class="card-header text-center bg-dark text-white">Nuevo Usuario</h5>
+                <div class="card-body">
+
                     <div class="form-row">
                         <div class="col">
                             <label for="nombres">Nombres</label>
@@ -28,14 +29,14 @@
                         <div class="col">
                             <label for="apellidopaterno">Apellido Paterno</label>
                             <input type="text" class="form-control" placeholder="Apellido Paterno"
-                                th:field="*{apellidopaterno}">
+                                th:field="*{apellidoPaterno}">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col">
                             <label for="apellidopaterno">Apellido Materno</label>
                             <input type="text" class="form-control" placeholder="Apellido Materno"
-                                th:field="*{apellidomaterno}">
+                                th:field="*{apellidoMaterno}">
                         </div>
                         <div class="col">
                             <label for="apellidopaterno">Correo</label>
@@ -44,13 +45,26 @@
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group col">
-                            <label for="inputState">Estatus</label>
-                            <select id="inputState" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>...</option>
-                            </select>
+                        <div class="form-group col-md-6">
+                            <fieldset class="form-group row mt-3">
+                                <legend class="col-form-label col-sm-3 float-sm-left pt-0">
+                                    Estatus
+                                </legend>
+                                <div class="col-sm-9">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="1" id="1" value="1" checked
+                                            th:field="*{status}" required="true" />
+                                        <label class="form-check-label" for="1">Activo</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="0" id="0" value="0"
+                                            th:field="*{status}" required="true" />
+                                        <label class="form-check-label" for="0">Inactivo</label>
+                                    </div>
+                                </div>
+                            </fieldset>
                         </div>
+
                         <div class="col">
                             <label for="apellidopaterno">Telefono</label>
                             <input type="text" class="form-control" placeholder="Telefono" th:field="*{telefono}">
@@ -61,12 +75,12 @@
                         <div class="col">
                             <label for="apellidopaterno">Fecha de Nacimiento</label>
                             <input type="date" class="form-control" placeholder="Fecha de Nacimiento"
-                                th:field="*{fechanacimiento}">
+                                th:field="*{fechaNacimiento}">
                         </div>
                         <div class="col">
                             <label for="apellidopaterno">Fecha de Ingreso</label>
                             <input type="date" class="form-control" placeholder="Fecha de Ingreso"
-                                th:field="*{fechaingreso}">
+                                th:field="*{fechaIngreso}">
                         </div>
                     </div>
 
@@ -77,23 +91,25 @@
                         </div>
                         <div class="col">
                             <label for="apellidopaterno">Contraseña</label>
-                            <input type="text" class="form-control" placeholder="Contraseña" th:field="*{password}">
+                            <input type="password" class="form-control" placeholder="Contraseña"
+                                th:field="*{password}">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="inputArea">Area</label>
-                            <select id="inputArea" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>...</option>
+                            <select id="inputArea" class="form-control" th:field="*{area}">
+                                <option value="" selected="selected">Seleccione un Area</option>
+                                <option th:each="a:${area}" th:value="${a.id_area}" th:text="${a.nombre}">Area</option>
                             </select>
                         </div>
                         <div class="form-group col">
-                            <label for="inputArea">Perfil</label>
-                            <select id="inputArea" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>...</option>
+                            <label for="inputPerfil">Perfil</label>
+                            <select id="inputPerfil" class="form-control" th:field="*{perfil}">
+                                <option value="" selected="selected">Seleccione un Perfil</option>
+                                <option value="" th:each="p:${perfil}" th:value="${p.id}" th:text="${p.perfil}">Perfil
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -102,20 +118,17 @@
                         <label for="exampleFormControlFile1">Seleccione foto del usuario</label>
                         <input type="file" class="form-control-file" id="exampleFormControlFile1" th:field="*{foto}">
                     </div>
-                </form>
 
-            </div>
-            <div class="card-footer bg-dark">
-                <a href="#" class="btn btn-outline-success">Guardar</a>
-            </div>
+
+                </div>
+                <div class="card-footer bg-dark">
+
+                    <input type="submit" class="btn btn-outline-success btn-lg btn-block" />
+                </div>
+            </form>
         </div>
 
     </div>
-
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

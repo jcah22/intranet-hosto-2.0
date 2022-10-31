@@ -1,4 +1,5 @@
 package com.hosto.controllers;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -16,7 +17,6 @@ import com.hosto.models.Cfdi;
 import com.hosto.models.Directivo;
 import com.hosto.models.Empresa;
 import com.hosto.models.Odc;
-import com.hosto.models.Perfil;
 import com.hosto.models.Proveedor;
 import com.hosto.models.Req;
 import com.hosto.models.Status;
@@ -64,7 +64,6 @@ public class HomeController {
 
 	@Autowired
 	private IPerfilService perfilService;
-
 
 	Date date = new Date();
 	Calendar calendar = Calendar.getInstance();
@@ -155,6 +154,29 @@ public class HomeController {
 
 	}
 
+	@GetMapping("/newuser")
+	public String newUser(Model model) {
+		Usuario usuario = new Usuario();
+		List<Area> areas = areaservice.listarTodos();
+		model.addAttribute("perfil", perfilService.listarTodos());
+		model.addAttribute("usuario", usuario);
+		model.addAttribute("area", areas);
+		return "newuser";
+	}
+
+
+
+	@PostMapping("/saveuser")
+	public String saveUser(@ModelAttribute Usuario usuario){
+
+
+		usuarioService.guardarUsuario(usuario);
+	
+
+		return "temp";
+
+	}
+
 	@PostMapping("/saveodc")
 	public String saveOdc(@ModelAttribute Odc odc, @ModelAttribute Req req) {
 
@@ -183,18 +205,6 @@ public class HomeController {
 	public String login() {
 
 		return "login";
-	}
-
-
-	@GetMapping("/newuser")
-	public String newUser(Model model,Perfil perfil){
-
-		Usuario usuario = null;
-		model.addAttribute("perfil", perfilService.listarTodos());
-
-	
-
-		return "newuser";
 	}
 
 }

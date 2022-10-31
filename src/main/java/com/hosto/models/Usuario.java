@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Usuario implements Serializable {
 
@@ -28,8 +30,10 @@ public class Usuario implements Serializable {
 
 	private String correo;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaIngreso;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimiento;
 
 	private String foto;

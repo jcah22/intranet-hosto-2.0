@@ -48,4 +48,10 @@ public class OdcServiceImpl implements IOdcService {
 		return odcrepository.findById(id).orElse(null);
 	}
 
+	@Override
+	public Odc actualizarOdc(Odc odc) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

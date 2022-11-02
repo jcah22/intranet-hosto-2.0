@@ -12,6 +12,8 @@ public interface IUsuarioService {
 
 	public Usuario buscarPorId(Long id);
 
+	public Usuario actualizarUsuario(Usuario usuario);
+
 	public void eliminar(Long id);
 
 }

@@ -2,7 +2,6 @@ package com.hosto.models;
 
 import java.io.Serializable;
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;

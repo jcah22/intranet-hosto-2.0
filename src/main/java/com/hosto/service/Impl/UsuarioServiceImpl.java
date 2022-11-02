@@ -40,4 +40,11 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		usuariorepository.save(usuario);
 	}
 
+
+	@Override
+	public Usuario actualizarUsuario(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

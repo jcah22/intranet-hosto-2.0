@@ -32,6 +32,8 @@ public class OdcServiceImpl implements IOdcService {
 	@Override
 	public void eliminar(Long id) {
 
+		odcrepository.deleteById(id);
+
 	}
 
 	@Override
@@ -50,7 +52,7 @@ public class OdcServiceImpl implements IOdcService {
 
 	@Override
 	public Odc actualizarOdc(Odc odc) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

@@ -2,16 +2,12 @@ package com.hosto.models;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -57,24 +53,17 @@ public class Usuario implements Serializable {
 	@OneToMany(mappedBy = "usuario")
 	private List<Odc> odc;
 
-	// Relacion ManyToMany (Un usuario tiene muchos perfiles)
-	// Por defecto Fetch es FetchType.LAZY
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "UsuarioPerfil", // tabla intermedia
-			joinColumns = @JoinColumn(name = "idUsuario"), // foreignKey en la tabla de UsuarioPerfil
-			inverseJoinColumns = @JoinColumn(name = "idPerfil") // foreignKey en la tabla de UsuarioPerfil
-	)
-	private List<Perfil> perfiles;
+	@ManyToOne
+	@JoinColumn(name = "perfil_id")
+	private Perfil perfil;
 
 	public Usuario() {
 
 	}
 
-	
-
 	public Usuario(Long id_usuario, String apellidoPaterno, String apellidoMaterno, String nombres, String correo,
 			Date fechaIngreso, Date fechaNacimiento, String foto, String password, Long status, String telefono,
-			String username, Area area, List<Odc> odc, List<Perfil> perfiles) {
+			String username, Area area, List<Odc> odc, Perfil perfil) {
 		this.id_usuario = id_usuario;
 		this.apellidoPaterno = apellidoPaterno;
 		this.apellidoMaterno = apellidoMaterno;
@@ -89,10 +78,8 @@ public class Usuario implements Serializable {
 		this.username = username;
 		this.area = area;
 		this.odc = odc;
-		this.perfiles = perfiles;
+		this.perfil = perfil;
 	}
-
-
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -210,18 +197,12 @@ public class Usuario implements Serializable {
 		this.odc = odc;
 	}
 
-	
-
-	// Metodo para agregar perfiles
-	public void agregar(Perfil tempPerfil) {
-		if (perfiles == null) {
-			perfiles = new LinkedList<>();
-		}
-		perfiles.add(tempPerfil);
+	public Perfil getPerfil() {
+		return perfil;
 	}
 
-	
-
-	
+	public void setPerfil(Perfil perfil) {
+		this.perfil = perfil;
+	}
 
 }

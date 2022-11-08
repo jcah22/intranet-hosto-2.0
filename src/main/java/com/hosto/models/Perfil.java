@@ -1,16 +1,25 @@
 package com.hosto.models;
 
 import javax.persistence.Entity;
+
 import javax.persistence.*;
 
 @Entity
 public class Perfil {
 
-    @Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String perfil;
+
+	public Perfil() {
+	}
+
+	public Perfil(Long id, String perfil) {
+		this.id = id;
+		this.perfil = perfil;
+	}
 
 	public Long getId() {
 		return id;
@@ -28,9 +37,4 @@ public class Perfil {
 		this.perfil = perfil;
 	}
 
-	@Override
-	public String toString() {
-		return "Perfil [id=" + id + ", perfil=" + perfil + "]";
-	}
-    
 }

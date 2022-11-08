@@ -43,7 +43,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
 	@Override
 	public Usuario actualizarUsuario(Usuario usuario) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

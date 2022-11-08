@@ -186,6 +186,17 @@ public class HomeController {
 
 	}
 
+	@GetMapping("/deleteodc/{id}")
+	public String eliminar(@PathVariable("id") Long id) {
+
+		odcService.eliminar(id);
+		
+		
+		return "redirect:/odc?filtro=2";
+	}
+
+
+
 	@GetMapping("/detalleodc/{id}")
 	public String detalleodc(@PathVariable Long id, Model model, RedirectAttributes flash, @ModelAttribute Req req) {
 

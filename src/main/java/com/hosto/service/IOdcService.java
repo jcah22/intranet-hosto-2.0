@@ -12,8 +12,6 @@ public interface IOdcService {
 
 	public Odc buscarPorId(Long id);
 
-	public Odc actualizarOdc(Odc odc);
-
 	public void eliminar(Long id);
 
 	public List<Odc> findAllByQuery(int palabraClave);

@@ -1,6 +1,7 @@
 package com.hosto.service.Impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,6 +42,7 @@ public class OdcServiceImpl implements IOdcService {
 	public List<Odc> findAllByQuery(int palabraClave) {
 
 		return odcrepository.findByOdcs(palabraClave);
+	
 	}
 
 	@Override
@@ -50,10 +52,8 @@ public class OdcServiceImpl implements IOdcService {
 		return odcrepository.findById(id).orElse(null);
 	}
 
-	@Override
-	public Odc actualizarOdc(Odc odc) {
-		
-		return null;
-	}
+	
+
+	
 
 }

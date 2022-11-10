@@ -21,7 +21,12 @@
     </h1>
 
     <form th:action="@{/saveodc}" th:object="${odc}" autocomplete="off" method="POST">
-      <input type="hidden" th:field="*{id_odc}">
+
+      <div>
+        <input type="hidden" th:field="*{odc.id_odc}">
+      </div>
+
+     
 
       <div class="form-row">
         <div class="form-group col-md-6">
@@ -136,6 +141,10 @@
           <input type="submit" class="btn btn-outline-success btn-lg btn-block" />
         </div>
       </div>
+
+      
+
+
     </form>
   </div>
 

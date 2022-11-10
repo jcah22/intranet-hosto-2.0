@@ -16,6 +16,6 @@ public interface IReqService {
 
 	public List<Req> findAllByQuery(String palabraClave);
 
-	public List<Req> findAllByCodigo(String codigo);
+
 
 }

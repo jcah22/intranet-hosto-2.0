@@ -45,10 +45,8 @@ public class ReqServiceImpl implements IReqService {
 		return reqrepository.searchFiltroRepository(palabraClave);
 	}
 
-	@Override
-	public List<Req> findAllByCodigo(String codigo) {
+	
 
-		return reqrepository.findByCodigo(codigo);
-	}
+
 
 }

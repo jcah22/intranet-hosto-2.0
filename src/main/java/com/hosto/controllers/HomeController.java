@@ -3,6 +3,8 @@ package com.hosto.controllers;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -164,14 +166,10 @@ public class HomeController {
 		return "newuser";
 	}
 
-
-
 	@PostMapping("/saveuser")
-	public String saveUser(@ModelAttribute Usuario usuario){
-
+	public String saveUser(@ModelAttribute Usuario usuario) {
 
 		usuarioService.guardarUsuario(usuario);
-	
 
 		return "temp";
 
@@ -190,12 +188,9 @@ public class HomeController {
 	public String eliminar(@PathVariable("id") Long id) {
 
 		odcService.eliminar(id);
-		
-		
+
 		return "redirect:/odc?filtro=2";
 	}
-
-
 
 	@GetMapping("/detalleodc/{id}")
 	public String detalleodc(@PathVariable Long id, Model model, RedirectAttributes flash, @ModelAttribute Req req) {
@@ -216,6 +211,33 @@ public class HomeController {
 	public String login() {
 
 		return "login";
+	}
+
+
+	@GetMapping("/editarodc/{id}")
+	public String editarOdc(@PathVariable Long id,Model model){
+
+		Odc odc = null;
+		odc = odcService.buscarPorId(id);
+	
+		List<Area> areas = areaservice.listarTodos();
+		List<Cfdi> cfdis = cfdiservice.listarTodos();
+		List<Directivo> directivos = directivoservice.listarTodos();
+		List<Req> reqs = reqservice.listarTodos();
+		List<Status> status = statusservice.listarTodos();
+		List<Usuario> usuarios = usuarioService.listarTodos();
+		List<Proveedor> proveedores = proveedorService.listarTodos();
+
+		model.addAttribute("areas", areas);
+		model.addAttribute("cfdis", cfdis);
+		model.addAttribute("directivos", directivos);
+		model.addAttribute("reqs", reqs);
+		model.addAttribute("status", status);
+		model.addAttribute("odc", odc);
+		model.addAttribute("usuarios", usuarios);
+		model.addAttribute("prov", proveedores);
+
+			return "newodc";
 	}
 
 }

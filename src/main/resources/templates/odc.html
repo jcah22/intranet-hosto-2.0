@@ -67,7 +67,6 @@
       </div>
     </div>
   </div>
-  <hr />
 
   <div class=" table-responsive-md container-fluid mt-2 mb-5">
     <table class=" table table-hover text-center mb-5">
@@ -115,16 +114,16 @@
           <td th:text="${odc.usuario.area.nombre}"></td>
           <td th:text="'$'+${#numbers.formatDecimal(odc.total, 1, 'COMMA', 2, 'POINT')}"></td>
           <td>
-            <a href="">
+            <a th:href="@{'/editarodc/'+ ${odc.id_odc}}">
               <i class="bi bi-pencil control" data-toggle="tooltip" data-placement="top" title="Editar"></i>
             </a>
             &nbsp; &nbsp;
-            <a th:href="@{/deleteodc/{id} (id=${odc.id_odc}) }"
+            <a th:href="@{/deleteodc/{id} (id=${odc.id_odc})}"
              title="Eliminar Usuario"
             onclick="return confirm('Estas seguro de Eliminar el Ususario ?');"><i class="bi bi-trash control" data-toggle="tooltip" data-placement="top"
                 title="Eliminar"></i></a>
             &nbsp; &nbsp;
-            <a th:href="@{/detalleodc/{id} (id=${odc.id_odc}) }"><i class="bi bi-receipt-cutoff" data-toggle="tooltip"
+            <a th:href="@{/detalleodc/{id} (id=${odc.id_odc})}"><i class="bi bi-receipt-cutoff" data-toggle="tooltip"
                 data-placement="top" title="Detalle"></i></a>
           </td>
         </tr>

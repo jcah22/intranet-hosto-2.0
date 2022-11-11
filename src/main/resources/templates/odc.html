@@ -118,10 +118,9 @@
               <i class="bi bi-pencil control" data-toggle="tooltip" data-placement="top" title="Editar"></i>
             </a>
             &nbsp; &nbsp;
-            <a th:href="@{/deleteodc/{id} (id=${odc.id_odc})}"
-             title="Eliminar Usuario"
-            onclick="return confirm('Estas seguro de Eliminar el Ususario ?');"><i class="bi bi-trash control" data-toggle="tooltip" data-placement="top"
-                title="Eliminar"></i></a>
+            <a th:href="@{/deleteodc/{id} (id=${odc.id_odc})}" title="Eliminar Usuario"
+              onclick="return confirm('Estas seguro de Eliminar el Ususario ?');"><i class="bi bi-trash control"
+                data-toggle="tooltip" data-placement="top" title="Eliminar"></i></a>
             &nbsp; &nbsp;
             <a th:href="@{/detalleodc/{id} (id=${odc.id_odc})}"><i class="bi bi-receipt-cutoff" data-toggle="tooltip"
                 data-placement="top" title="Detalle"></i></a>

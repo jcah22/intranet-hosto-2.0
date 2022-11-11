@@ -6,9 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.hosto.models.Perfil;
 
 @Repository
-public interface PerfilRepository extends JpaRepository<Perfil,Long>{
+public interface PerfilRepository extends JpaRepository<Perfil, Long> {
 
-
-
-    
 }

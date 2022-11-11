@@ -6,8 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.hosto.models.Directivo;
 
 @Repository
-public interface DirectivoRepository extends JpaRepository<Directivo, Long>{
-	
-	
+public interface DirectivoRepository extends JpaRepository<Directivo, Long> {
 
 }

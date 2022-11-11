@@ -45,8 +45,4 @@ public class ReqServiceImpl implements IReqService {
 		return reqrepository.searchFiltroRepository(palabraClave);
 	}
 
-	
-
-
-
 }

@@ -5,8 +5,8 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
-	
+
+
 	<link rel="stylesheet" th:href="@{/css/estilos.css}">
 
 	<!-- Bootstrap CSS -->
@@ -19,26 +19,28 @@
 <body>
 	<div class="container mt-5">
 		<div class="row">
-			<form class="col-sm-6 col-md-10  col-lg-10 " th:action="@{/savereq}" th:object="${req}" autocomplete="off" method="POST">
+			<form class="col-sm-6 col-md-10  col-lg-10 " th:action="@{/savereq}" th:object="${req}" autocomplete="off"
+				method="POST">
 				<h2 class="text-center text-primary font-italic">Nueva Requisición</h2>
 				<div class="form-group">
 					<label for="nombre">Nombre</label>
-					<input type="text" th:field="*{nombre}" class="form-control" id="nombre" aria-describedby="nombre" >
+					<input type="text" th:field="*{nombre}" class="form-control" id="nombre" aria-describedby="nombre">
 				</div>
 				<div class="form-group">
 					<label for="codigo">Codigo</label>
-					<input type="text"  th:field="*{codigo}" class="form-control" id="codigo">
+					<input type="text" th:field="*{codigo}" class="form-control" id="codigo">
 				</div>
 				<div class="input-group mb-5">
 					<div class="input-group-prepend">
-						<button class="btn btn-outline-secondary "  type="button" disabled="true">Empresa</button>
+						<button class="btn btn-outline-secondary " type="button" disabled="true">Empresa</button>
 					</div>
-					<select class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon" th:field="*{empresa}">
+					<select class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon"
+						th:field="*{empresa}">
 						<option th:each="e:${empresas }" th:value="${e.id_empresa}" th:text="${e.nombre}"></option>
-					
+
 					</select>
 				</div>
-				<input type="submit" class="btn btn-primary btn-md "  value="Guardar Requisición" />
+				<input type="submit" class="btn btn-primary btn-md " value="Guardar Requisición" />
 		</div>
 	</div>
 	</form>
